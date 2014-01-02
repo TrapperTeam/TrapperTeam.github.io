@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Technical documentation: Core modules &mdash; Trapper 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Trapper 1 documentation" href="index.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Technical documentation: Overview" href="technical_doc_part_1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="troubleshooting.html" title="Troubleshooting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="technical_doc_part_1.html" title="Technical documentation: Overview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="technical-documentation-core-modules">
+<h1>Technical documentation: Core modules<a class="headerlink" href="#technical-documentation-core-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accounts">
+<span id="trapper-apps-accounts"></span><h2>accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<p>Accounts module is responsible for extending the <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt> model.
+It provides a <tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.accounts.models.UserProfile</span></tt> model which extends some basic user functionality.</p>
+<div class="section" id="models">
+<h3>models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="views">
+<h3>views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-trapper.apps.accounts.forms">
+<span id="forms"></span><h3>forms<a class="headerlink" href="#module-trapper.apps.accounts.forms" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="trapper.apps.accounts.forms.CreateUserForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.forms.</tt><tt class="descname">CreateUserForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/forms.html#CreateUserForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.forms.CreateUserForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>User registration form.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="storage">
+<span id="trapper-apps-storage"></span><h2>storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<p>Purpose of storage module is uploading and storing various media resources.
+In most cases this will be video files, images or audio files, but any type of file can be uploaded and stored.
+It is often used by other applications (e.g. <tt class="xref py py-mod docutils literal"><span class="pre">trapper.apps.media_classification</span></tt>) to display media resources.</p>
+<div class="section" id="id1">
+<h3>models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>views<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>forms<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="media-classification">
+<span id="trapper-apps-media-classification"></span><h2>media_classification<a class="headerlink" href="#media-classification" title="Permalink to this headline">¶</a></h2>
+<p>Media classification module is at the moment one of the core features of Trapper.
+This module allows for the classification of media resources (<a class="reference internal" href="#trapper-apps-storage"><em>storage</em></a>) within the context defined in <tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Project</span></tt> objects.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>It is worth noting how the classification is handled in the backend:
+Single <tt class="docutils literal"><span class="pre">Classification</span></tt> is split into
+rows, each containing an indentical set of features. Each <tt class="docutils literal"><span class="pre">ClassificationRow</span></tt> is again split into a set of <em>states</em> of the Feature model, namely an instance of model <tt class="docutils literal"><span class="pre">FeatureAnswer</span></tt></p>
+<p>See models for more details:</p>
+<ul class="last simple">
+<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Classification</span></tt></li>
+<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.ClassificationRow</span></tt></li>
+<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.FeatureAnswer</span></tt></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>models<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>views<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>forms<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="decorators">
+<h3>decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="messaging">
+<span id="trapper-apps-messaging"></span><h2>messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h2>
+<p>Module <a class="reference internal" href="#trapper-apps-messaging"><em>messaging</em></a> serves as a simple notification system as well as an internal <em>e-mail</em> functionality between the users.</p>
+<div class="section" id="id7">
+<h3>models<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id8">
+<h3>views<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>forms<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="geomap">
+<span id="trapper-apps-geomap"></span><h2>geomap<a class="headerlink" href="#geomap" title="Permalink to this headline">¶</a></h2>
+<p>Module <a class="reference internal" href="#trapper-apps-geomap"><em>geomap</em></a> uses geospatial information about resources stored by <a class="reference internal" href="#trapper-apps-storage"><em>storage</em></a> to present it on the map.</p>
+<div class="section" id="id10">
+<h3>models<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>views<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>forms<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="common">
+<span id="trapper-apps-common"></span><h2>common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<p>Module <a class="reference internal" href="#trapper-apps-common"><em>common</em></a> servers as a place for a general-purpose functions or decorators, not associated with
+any of the applications above.</p>
+<div class="section" id="id13">
+<h3>decorators<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.common.decorators"></span><dl class="function">
+<dt id="trapper.apps.common.decorators.object_access_required">
+<tt class="descclassname">trapper.apps.common.decorators.</tt><tt class="descname">object_access_required</tt><big>(</big><em>modelname</em>, <em>access_func</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/common/decorators.html#object_access_required"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.common.decorators.object_access_required" title="Permalink to this definition">¶</a></dt>
+<dd><p>At the moment this decorator checks whether request.user passes certain access_func.</p>
+<p>TODO: It should also check whether the user is authenticated:
+2. Verifies the access for request.user to an instance of &#8216;modelname&#8217; class object using the access_func.
+Object is identified by the &#8216;pk&#8217; item from the request.GET</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Technical documentation: Core modules</a><ul>
+<li><a class="reference internal" href="#accounts">accounts</a><ul>
+<li><a class="reference internal" href="#models">models</a></li>
+<li><a class="reference internal" href="#views">views</a></li>
+<li><a class="reference internal" href="#module-trapper.apps.accounts.forms">forms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#storage">storage</a><ul>
+<li><a class="reference internal" href="#id1">models</a></li>
+<li><a class="reference internal" href="#id2">views</a></li>
+<li><a class="reference internal" href="#id3">forms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#media-classification">media_classification</a><ul>
+<li><a class="reference internal" href="#id4">models</a></li>
+<li><a class="reference internal" href="#id5">views</a></li>
+<li><a class="reference internal" href="#id6">forms</a></li>
+<li><a class="reference internal" href="#decorators">decorators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#messaging">messaging</a><ul>
+<li><a class="reference internal" href="#id7">models</a></li>
+<li><a class="reference internal" href="#id8">views</a></li>
+<li><a class="reference internal" href="#id9">forms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geomap">geomap</a><ul>
+<li><a class="reference internal" href="#id10">models</a></li>
+<li><a class="reference internal" href="#id11">views</a></li>
+<li><a class="reference internal" href="#id12">forms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common">common</a><ul>
+<li><a class="reference internal" href="#id13">decorators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="technical_doc_part_1.html"
+                        title="previous chapter">Technical documentation: Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="troubleshooting.html"
+                        title="next chapter">Troubleshooting</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/technical_doc_part_2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="troubleshooting.html" title="Troubleshooting"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="technical_doc_part_1.html" title="Technical documentation: Overview"
+             >previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Trapper development team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>

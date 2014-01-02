@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Technical documentation: Overview &mdash; Trapper 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Trapper 1 documentation" href="index.html" />
+    <link rel="next" title="Technical documentation: Core modules" href="technical_doc_part_2.html" />
+    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="technical_doc_part_2.html" title="Technical documentation: Core modules"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="technical-documentation-overview">
+<h1>Technical documentation: Overview<a class="headerlink" href="#technical-documentation-overview" title="Permalink to this headline">¶</a></h1>
+<p>This document will cover a technical documentation for the Trapper project.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Trapper was developed with a flexible architecture in mind.
+For that reason it was separated into few django applications which establish some layers of abstraction over common usages.
+As of yet, there exist few core trapper applications, which often communicate between each other.</p>
+</div>
+<div class="section" id="django-applications">
+<h2>Django applications<a class="headerlink" href="#django-applications" title="Permalink to this headline">¶</a></h2>
+<p>Trapper is composed of several Django applications.
+In next section we will cover each application in the project, describing the <em>Models</em> (database ORM definition) of each application,
+its <em>Views</em> (<em>Controller</em> in the MVC) as well as the frontend, i.e. <em>Templates</em>.
+In many cases we will also cover the <em>Forms</em> or the <em>Decorators</em> of the application.</p>
+<p>Core applications of Trapper are following:</p>
+<ul class="simple">
+<li>Accounts (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-accounts"><em>accounts</em></a>)</li>
+<li>Storage (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-storage"><em>storage</em></a>)</li>
+<li>Media classification (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-media-classification"><em>media_classification</em></a>)</li>
+<li>Messaging (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-messaging"><em>messaging</em></a>)</li>
+<li>Geomap (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-geomap"><em>geomap</em></a>)</li>
+<li>Common (<a class="reference internal" href="technical_doc_part_2.html#trapper-apps-common"><em>common</em></a>)</li>
+</ul>
+</div>
+<div class="section" id="coding-style">
+<h2>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-rules">
+<h3>General rules<a class="headerlink" href="#general-rules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>We aim to follow <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP-8</a> coding style guide, although at this stage of development it wasn&#8217;t as carefully abiden.</li>
+<li>Exception to the rule above is using <strong>tabs</strong> instead of spaces for indentation, and allowing for a line longer than 79 characters.</li>
+</ul>
+</div>
+<div class="section" id="strings-single-vs-double-quotes">
+<h3>Strings: single vs double quotes<a class="headerlink" href="#strings-single-vs-double-quotes" title="Permalink to this headline">¶</a></h3>
+<p>Use double quotes:</p>
+<ul class="simple">
+<li>When the string is a sentence, message or a word: <tt class="docutils literal"><span class="pre">&quot;Four</span> <span class="pre">Torkshiremen.&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;Shoebox&quot;</span></tt></li>
+</ul>
+<p>Use single quotes:</p>
+<ul class="simple">
+<li>When the string is a regexp: <tt class="docutils literal"><span class="pre">r'spam/detail/(?P&lt;pk&gt;\d+)/$'</span></tt></li>
+<li>When the string is an identifier, kwarg which is not a sentence or a dict key:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">FRUIT_CHOICES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="s">&quot;Apples&quot;</span><span class="p">,</span>
+    <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="s">&quot;Banana&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">set_color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the color.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intentation-in-templates">
+<h3>Intentation in templates<a class="headerlink" href="#intentation-in-templates" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Python code in templates should be indented up to the current indentation level of the preceeding HTML tag</li>
+<li>Each variable should be separated by one space from the parenthesis, e.g. <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">value</span> <span class="pre">}}</span></tt> and <strong>not</strong> <tt class="docutils literal"><span class="pre">{{value}}</span></tt></li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+{% for row in table_rows %}
+    <span class="nt">&lt;tr&gt;</span>
+    {% for cell in row.cells %}
+        <span class="nt">&lt;td&gt;</span>{{ cell }}<span class="nt">&lt;/td&gt;</span>
+    {% endfor %}
+    <span class="nt">&lt;/tr&gt;</span>
+{% endfor %}
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Technical documentation: Overview</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#django-applications">Django applications</a></li>
+<li><a class="reference internal" href="#coding-style">Coding style</a><ul>
+<li><a class="reference internal" href="#general-rules">General rules</a></li>
+<li><a class="reference internal" href="#strings-single-vs-double-quotes">Strings: single vs double quotes</a></li>
+<li><a class="reference internal" href="#intentation-in-templates">Intentation in templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorials.html"
+                        title="previous chapter">Tutorials</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="technical_doc_part_2.html"
+                        title="next chapter">Technical documentation: Core modules</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/technical_doc_part_1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="technical_doc_part_2.html" title="Technical documentation: Core modules"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             >previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Trapper development team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>

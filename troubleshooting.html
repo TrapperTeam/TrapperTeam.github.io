@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Troubleshooting &mdash; Trapper 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Trapper 1 documentation" href="index.html" />
+    <link rel="next" title="Contribute to Trapper" href="contribute.html" />
+    <link rel="prev" title="Technical documentation: Core modules" href="technical_doc_part_2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="contribute.html" title="Contribute to Trapper"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="technical_doc_part_2.html" title="Technical documentation: Core modules"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>This section will cover some of the problems that you might encounter when trying to setup Trapper for the first time.
+We rely on many external libraries, and there&#8217;s no way we could cover the step-by-step installation on every possible system and configuration.</p>
+<p>Below you will find a list of problems:</p>
+<div class="section" id="cannot-determine-postgis-version">
+<h2>Cannot determine PostGIS version<a class="headerlink" href="#cannot-determine-postgis-version" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">django.core.exceptions.ImproperlyConfigured: Cannot determine PostGIS version for database &#8220;trapper_db&#8221;. GeoDjango requires at least PostGIS version 1.3. Was the database created from a spatial database template?</p>
+</div>
+<p>There may be two problems here:</p>
+<ol class="arabic simple">
+<li>You did not install the PostGIS extension on the database</li>
+<li>Your PostGIS version is neither 1.3, 1.4, 1.5 or 2.0</li>
+</ol>
+<p>Let us check whether you have PostGIS installed. Execute these commands:</p>
+<div class="highlight-none"><div class="highlight"><pre>su - postgres
+psql trapper_db
+trapper_db=# select postgis_lib_version();
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>If the output is an error, you have not installed the PostGIS extension on your database.</li>
+<li>If the output is silent (e.g. no output), you might have a PostGIS 2.1 or newer which is not recognized properly by GeoDjango.</li>
+</ol>
+<p>In order to resolve that, you can edit the Trapper&#8217;s <tt class="docutils literal"><span class="pre">settings.py</span></tt> file and add the following:</p>
+<p><tt class="docutils literal"><span class="pre">POSTGIS_VERSION</span> <span class="pre">=</span> <span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">0)</span></tt>, where the tuple <tt class="docutils literal"><span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">0)</span></tt> will be your version of PostGIS.</p>
+</div>
+<div class="section" id="operationalerror-fatal-peer-authentication-failed">
+<h2>OperationalError: FATAL: Peer authentication failed<a class="headerlink" href="#operationalerror-fatal-peer-authentication-failed" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">OperationalError: FATAL:  Peer authentication failed for user &#8220;trapper&#8221;</p>
+</div>
+<p>This error means that user <tt class="docutils literal"><span class="pre">trapper</span></tt> cannot access the database.</p>
+<p>Find the following line in the file <tt class="docutils literal"><span class="pre">/etc/postgresql/9.1/main/pg_hba.conf</span></tt>:</p>
+<div class="highlight-none"><div class="highlight"><pre># &quot;local&quot; is for Unix domain socket connections only
+local        all         all             peer
+</pre></div>
+</div>
+<p>and change the last item, <tt class="docutils literal"><span class="pre">peer</span></tt>, to <tt class="docutils literal"><span class="pre">md5</span></tt>.</p>
+<div class="highlight-none"><div class="highlight"><pre># &quot;local&quot; is for Unix domain socket connections only
+local        all         all             md5
+</pre></div>
+</div>
+<p>Restart the postgresql server as root:</p>
+<div class="highlight-none"><div class="highlight"><pre>sudo /etc/init.d/postgresql restart
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li><a class="reference internal" href="#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="technical_doc_part_2.html"
+                        title="previous chapter">Technical documentation: Core modules</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contribute.html"
+                        title="next chapter">Contribute to Trapper</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/troubleshooting.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="contribute.html" title="Contribute to Trapper"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="technical_doc_part_2.html" title="Technical documentation: Core modules"
+             >previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Trapper development team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>

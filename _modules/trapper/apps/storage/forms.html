@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trapper.apps.storage.forms &mdash; Trapper 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../../',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Trapper 1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../../index.html" class="icon icon-home"> Trapper</a>
+        <form class="wy-form" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-the-project">Preparing the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#running-trapper">Running Trapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#system-roles">System roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#anonymous-user">Anonymous user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#crowd-sourcing-user">Crowd-Sourcing user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#expert-user">Expert user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#trapper-staff">Trapper staff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_1.html">Technical documentation: Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#django-applications">Django applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#coding-style">Coding style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_2.html">Technical documentation: Core modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#storage">storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#media-classification">media_classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#messaging">messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#geomap">geomap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#common">common</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#error-could-not-open-extension-control-file-usr-share-postgresql-9-1-extension-postgis-control">ERROR: could not open extension control file &#8220;/usr/share/postgresql/9.1/extension/postgis.control&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contribute to Trapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contribute.html#irc-webchat">IRC Webchat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../authors.html#trapper-development-team">Trapper development team</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Trapper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">trapper.apps.storage.forms</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for trapper.apps.storage.forms</h1><div class="highlight"><pre>
+<span class="c">############################################################################</span>
+<span class="c">#   Copyright (c) 2013  IBS PAN Bialowieza                                 #</span>
+<span class="c">#   Copyright (c) 2013  Bialystok University of Technology                 #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This file is a part of Trapper.                                        #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   Trapper is free software; you can redistribute it and/or modify        #</span>
+<span class="c">#   it under the terms of the GNU General Public License as published by   #</span>
+<span class="c">#   the Free Software Foundation; either version 2 of the License, or      #</span>
+<span class="c">#   (at your option) any later version.                                    #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This program is distributed in the hope that it will be useful,        #</span>
+<span class="c">#   but WITHOUT ANY WARRANTY; without even the implied warranty of         #</span>
+<span class="c">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          #</span>
+<span class="c">#   GNU General Public License for more details.                           #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   You should have received a copy of the GNU General Public License      #</span>
+<span class="c">#   along with this program; if not, write to the                          #</span>
+<span class="c">#   Free Software Foundation, Inc.,                                        #</span>
+<span class="c">#   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.              #</span>
+<span class="c">############################################################################</span>
+
+<span class="kn">from</span> <span class="nn">ajax_select</span> <span class="kn">import</span> <span class="n">make_ajax_field</span>
+<span class="kn">from</span> <span class="nn">tinymce.widgets</span> <span class="kn">import</span> <span class="n">TinyMCE</span>
+
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="kn">from</span> <span class="nn">trapper.apps.media_classification.models</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.models</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Collection</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.geomap.models</span> <span class="kn">import</span> <span class="n">Location</span>
+
+<span class="kn">from</span> <span class="nn">trapper.tools.batch_uploading</span> <span class="kn">import</span> <span class="n">ConfigFileValidator</span>
+
+<div class="viewcode-block" id="CollectionRequestForm"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.CollectionRequestForm">[docs]</a><span class="k">class</span> <span class="nc">CollectionRequestForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Defines a form for creating a collection request for the :class:`Project` object.&quot;&quot;&quot;</span>
+
+	<span class="n">text</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">TinyMCE</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;cols&#39;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span> <span class="s">&#39;rows&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">}))</span>
+	<span class="n">project</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">())</span>
+	<span class="n">collection_pk</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">HiddenInput</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="CollectionUploadForm"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.CollectionUploadForm">[docs]</a><span class="k">class</span> <span class="nc">CollectionUploadForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Defines a form for uploading a collection from the archive.</span>
+<span class="sd">	This form handles the **first step** of the action - uploading and validating the definition file.</span>
+<span class="sd">	The validation is done by the :class:`.ConfigFileValidator` object.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">definition_file</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">FileField</span><span class="p">()</span>
+
+<div class="viewcode-block" id="CollectionUploadForm.validate_config_file"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.CollectionUploadForm.validate_config_file">[docs]</a>	<span class="k">def</span> <span class="nf">validate_config_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Validates the config file using the :class:`.ConfigFileValidator` object.</span>
+<span class="sd">		:class:`django.contrib.auth.models.User` object is provided as a parameter, because</span>
+<span class="sd">		the definition may require to perform action which may not be permitted for the user.</span>
+
+<span class="sd">		:param user: instance of the who requests the validation</span>
+<span class="sd">		:type user: :class:`django.contrib.auth.models.User`</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">errors</span> <span class="o">=</span> <span class="n">ConfigFileValidator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;definition_file&#39;</span><span class="p">],</span> <span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">check_errors</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">errors</span>
+		<span class="k">return</span> <span class="s">&quot;OK&quot;</span>
+</div></div>
+<div class="viewcode-block" id="CollectionUploadFormPart2"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.CollectionUploadFormPart2">[docs]</a><span class="k">class</span> <span class="nc">CollectionUploadFormPart2</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Defines a form for uploading a collection from the archive.</span>
+<span class="sd">	This form handles the **second step** of the action - uploading the archive file.</span>
+<span class="sd">	There is no archive validation done in this form (as it was in the first step) because</span>
+<span class="sd">	the final action is delegated to the task daemon.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">archive_file</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">FileField</span><span class="p">()</span>
+	<span class="n">job_pk</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">HiddenInput</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CollectionForm"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.CollectionForm">[docs]</a><span class="k">class</span> <span class="nc">CollectionForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Model form for creating and updating :class:`.Collection` objects</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+		<span class="n">model</span> <span class="o">=</span> <span class="n">Collection</span>
+	
+	<span class="n">owner</span> <span class="o">=</span> <span class="n">make_ajax_field</span><span class="p">(</span><span class="n">Collection</span><span class="p">,</span> <span class="s">&#39;owner&#39;</span><span class="p">,</span> <span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">plugin_options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;autoFocus&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,})</span>
+	<span class="n">resources</span> <span class="o">=</span> <span class="n">make_ajax_field</span><span class="p">(</span><span class="n">Collection</span><span class="p">,</span> <span class="s">&#39;resources&#39;</span><span class="p">,</span> <span class="s">&#39;resource&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">show_help_text</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">plugin_options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;autoFocus&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,})</span>
+	<span class="n">managers</span> <span class="o">=</span> <span class="n">make_ajax_field</span><span class="p">(</span><span class="n">Collection</span><span class="p">,</span> <span class="s">&#39;managers&#39;</span><span class="p">,</span> <span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">show_help_text</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">plugin_options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;autoFocus&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,})</span>
+</div>
+<div class="viewcode-block" id="ResourceForm"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.ResourceForm">[docs]</a><span class="k">class</span> <span class="nc">ResourceForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Model form for creating and updating :class:`.Resource` objects</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+		<span class="n">model</span> <span class="o">=</span> <span class="n">Resource</span>
+		<span class="c"># exclude the &#39;uploader&#39; field as it is always the request.user</span>
+		<span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;uploader&#39;</span><span class="p">,</span> <span class="s">&#39;thumbnail&#39;</span><span class="p">,</span> <span class="s">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s">&#39;resource_type&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ResourceForm.save"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.forms.ResourceForm.save">[docs]</a>	<span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force_insert</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">force_update</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;On resource save, the update of the metadata is performed</span>
+<span class="sd">		(see :meth:`.Resource.update_metadata`)</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">r</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">commit</span><span class="p">:</span>
+			<span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+			<span class="n">r</span><span class="o">.</span><span class="n">update_metadata</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">r</span>
+</div>
+	<span class="n">owner</span> <span class="o">=</span> <span class="n">make_ajax_field</span><span class="p">(</span><span class="n">Resource</span><span class="p">,</span> <span class="s">&#39;owner&#39;</span><span class="p">,</span> <span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">plugin_options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;autoFocus&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,})</span>
+	<span class="n">managers</span> <span class="o">=</span> <span class="n">make_ajax_field</span><span class="p">(</span><span class="n">Resource</span><span class="p">,</span> <span class="s">&#39;managers&#39;</span><span class="p">,</span> <span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">show_help_text</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">plugin_options</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;autoFocus&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,})</span></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Trapper development team.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

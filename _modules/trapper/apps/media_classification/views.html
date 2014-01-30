@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trapper.apps.media_classification.views &mdash; Trapper 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../../',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Trapper 1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../../index.html" class="icon icon-home"> Trapper</a>
+        <form class="wy-form" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-the-project">Preparing the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#running-trapper">Running Trapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#system-roles">System roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#anonymous-user">Anonymous user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#crowd-sourcing-user">Crowd-Sourcing user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#expert-user">Expert user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#trapper-staff">Trapper staff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_1.html">Technical documentation: Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#django-applications">Django applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#coding-style">Coding style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_2.html">Technical documentation: Core modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#storage">storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#media-classification">media_classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#messaging">messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#geomap">geomap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#common">common</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#error-could-not-open-extension-control-file-usr-share-postgresql-9-1-extension-postgis-control">ERROR: could not open extension control file &#8220;/usr/share/postgresql/9.1/extension/postgis.control&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contribute to Trapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contribute.html#irc-webchat">IRC Webchat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../authors.html#trapper-development-team">Trapper development team</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Trapper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">trapper.apps.media_classification.views</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for trapper.apps.media_classification.views</h1><div class="highlight"><pre>
+<span class="c">############################################################################</span>
+<span class="c">#   Copyright (c) 2013  IBS PAN Bialowieza                                 #</span>
+<span class="c">#   Copyright (c) 2013  Bialystok University of Technology                 #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This file is a part of Trapper.                                        #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   Trapper is free software; you can redistribute it and/or modify        #</span>
+<span class="c">#   it under the terms of the GNU General Public License as published by   #</span>
+<span class="c">#   the Free Software Foundation; either version 2 of the License, or      #</span>
+<span class="c">#   (at your option) any later version.                                    #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This program is distributed in the hope that it will be useful,        #</span>
+<span class="c">#   but WITHOUT ANY WARRANTY; without even the implied warranty of         #</span>
+<span class="c">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          #</span>
+<span class="c">#   GNU General Public License for more details.                           #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   You should have received a copy of the GNU General Public License      #</span>
+<span class="c">#   along with this program; if not, write to the                          #</span>
+<span class="c">#   Free Software Foundation, Inc.,                                        #</span>
+<span class="c">#   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.              #</span>
+<span class="c">############################################################################</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">inlineformset_factory</span>
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">generic</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
+
+<span class="kn">from</span> <span class="nn">braces.views</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
+<span class="kn">from</span> <span class="nn">extra_views</span> <span class="kn">import</span> <span class="n">InlineFormSet</span><span class="p">,</span> <span class="n">CreateWithInlinesView</span><span class="p">,</span> <span class="n">UpdateWithInlinesView</span><span class="p">,</span> <span class="n">NamedFormsetsMixin</span>
+
+<span class="kn">from</span> <span class="nn">trapper.apps.media_classification.models</span> <span class="kn">import</span> <span class="n">Feature</span><span class="p">,</span> <span class="n">FeatureAnswer</span><span class="p">,</span> <span class="n">FeatureScope</span><span class="p">,</span> <span class="n">Project</span><span class="p">,</span> <span class="n">Classification</span><span class="p">,</span> <span class="n">ClassificationRow</span><span class="p">,</span> <span class="n">ProjectRole</span><span class="p">,</span> <span class="n">ProjectCollection</span><span class="p">,</span> <span class="n">FeatureSet</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.research.models</span> <span class="kn">import</span> <span class="n">Project</span> <span class="k">as</span> <span class="n">RProject</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.models</span> <span class="kn">import</span> <span class="n">Resource</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.media_classification.forms</span> <span class="kn">import</span> <span class="n">ProjectForm</span><span class="p">,</span> <span class="n">ProjectCollectionFormset</span><span class="p">,</span> <span class="n">ProjectRoleFormset</span><span class="p">,</span> <span class="n">FeatureSetForm</span><span class="p">,</span> <span class="n">SequenceForm</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.common.decorators</span> <span class="kn">import</span> <span class="n">object_access_required</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span>
+
+
+<span class="c"># FeatureSet views</span>
+
+<div class="viewcode-block" id="FeatureSetDetailView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureSetDetailView">[docs]</a><span class="k">class</span> <span class="nc">FeatureSetDetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Detail view of a single FeatureSet model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">FeatureSet</span>
+</div>
+<div class="viewcode-block" id="FeatureSetListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureSetListView">[docs]</a><span class="k">class</span> <span class="nc">FeatureSetListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;List view of a FeatureSet model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">FeatureSet</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;featuresets&#39;</span>
+</div>
+<div class="viewcode-block" id="FeatureInline"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureInline">[docs]</a><span class="k">class</span> <span class="nc">FeatureInline</span><span class="p">(</span><span class="n">InlineFormSet</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Utility-class: Features displayed as a InlineFormset&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">FeatureSet</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">through</span>
+	<span class="n">extra</span> <span class="o">=</span> <span class="mi">2</span>
+</div>
+<div class="viewcode-block" id="FeatureSetUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureSetUpdateView">[docs]</a><span class="k">class</span> <span class="nc">FeatureSetUpdateView</span><span class="p">(</span><span class="n">UpdateWithInlinesView</span><span class="p">,</span> <span class="n">NamedFormsetsMixin</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Update view of the FeatureSet model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">FeatureSet</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">FeatureSetForm</span>
+	<span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">FeatureInline</span><span class="p">,]</span>
+	<span class="n">inlines_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;features_formset&#39;</span><span class="p">,]</span>
+</div>
+<div class="viewcode-block" id="FeatureSetCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureSetCreateView">[docs]</a><span class="k">class</span> <span class="nc">FeatureSetCreateView</span><span class="p">(</span><span class="n">CreateWithInlinesView</span><span class="p">,</span> <span class="n">NamedFormsetsMixin</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view of the FeatureSet model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">FeatureSet</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">FeatureSetForm</span>
+	<span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">FeatureInline</span><span class="p">,]</span>
+	<span class="n">inlines_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;features_formset&#39;</span><span class="p">,]</span>
+
+<span class="c"># Features views</span>
+</div>
+<div class="viewcode-block" id="FeatureDetailView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureDetailView">[docs]</a><span class="k">class</span> <span class="nc">FeatureDetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Detail view of the Feature model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Feature</span>
+</div>
+<div class="viewcode-block" id="FeatureListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureListView">[docs]</a><span class="k">class</span> <span class="nc">FeatureListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;List view of the Feature model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Feature</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;features&#39;</span>
+</div>
+<div class="viewcode-block" id="FeatureUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureUpdateView">[docs]</a><span class="k">class</span> <span class="nc">FeatureUpdateView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">UpdateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Update view of the Feature model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Feature</span>
+</div>
+<div class="viewcode-block" id="FeatureCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.FeatureCreateView">[docs]</a><span class="k">class</span> <span class="nc">FeatureCreateView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view of the Feature model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Feature</span>
+
+<span class="c"># Sequence views</span>
+</div>
+<div class="viewcode-block" id="SequenceCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.SequenceCreateView">[docs]</a><span class="k">class</span> <span class="nc">SequenceCreateView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view for the Sequence model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Sequence</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">SequenceForm</span>
+
+	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+		<span class="n">cproject</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;cp_pk&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">cproject</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">get_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">initial</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">SequenceCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_initial</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">initial</span><span class="p">[</span><span class="s">&#39;cp_pk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;cp_pk&#39;</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">initial</span>
+</div>
+<div class="viewcode-block" id="SequenceUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.SequenceUpdateView">[docs]</a><span class="k">class</span> <span class="nc">SequenceUpdateView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">UpdateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view for the Sequence model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Sequence</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">SequenceForm</span>
+
+	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+		<span class="n">cproject</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;cp_pk&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">cproject</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+</div>
+<div class="viewcode-block" id="SequenceDetailView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.SequenceDetailView">[docs]</a><span class="k">class</span> <span class="nc">SequenceDetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view for the Sequence model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Sequence</span>
+</div>
+<div class="viewcode-block" id="SequenceListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.SequenceListView">[docs]</a><span class="k">class</span> <span class="nc">SequenceListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view for the Sequence model&quot;&quot;&quot;</span>
+
+	<span class="c"># TODO:</span>
+	<span class="c"># SequenceListView is currently not used (and untested),</span>
+	<span class="c"># since raw list of sequences it not used in global scope,</span>
+	<span class="c"># e.g. without the project context on the classification project page)</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Sequence</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/sequence_list.html&#39;</span>
+
+<span class="c"># Project views</span>
+</div>
+<div class="viewcode-block" id="ProjectListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectListView">[docs]</a><span class="k">class</span> <span class="nc">ProjectListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;List view of the Project model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Project</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;items&#39;</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/project_list.html&#39;</span>
+
+<div class="viewcode-block" id="ProjectListView.get_queryset"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectListView.get_queryset">[docs]</a>	<span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Besides getting the queryset, determines the permissions for request.user.</span>
+
+<span class="sd">		:return: a list of tuples, each containing the following: (:class:`.Project`, user_can_view, user_can_edit)</span>
+<span class="sd">		:rtype: list</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">projects</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjectListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+		<span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+			<span class="n">roles</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">determine_roles</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">()</span> <span class="k">else</span> <span class="p">[]</span>
+			<span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">roles</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ProjectRole</span><span class="o">.</span><span class="n">ROLE_PROJECT_ADMIN</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">items</span>
+</div></div>
+<div class="viewcode-block" id="ProjectDetailView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectDetailView">[docs]</a><span class="k">class</span> <span class="nc">ProjectDetailView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Detail view for the Project model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Project</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">can_detail</span>
+
+	<span class="c">#@method_decorator(object_access_required(Project, can_detail_project))</span>
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjectDetailView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ProjectRoleInline"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectRoleInline">[docs]</a><span class="k">class</span> <span class="nc">ProjectRoleInline</span><span class="p">(</span><span class="n">InlineFormSet</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Utility-class: ProjectRoles displayed as a InlineFormset&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">ProjectRole</span>
+	<span class="n">extra</span> <span class="o">=</span> <span class="mi">2</span>
+</div>
+<div class="viewcode-block" id="CollectionInline"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.CollectionInline">[docs]</a><span class="k">class</span> <span class="nc">CollectionInline</span><span class="p">(</span><span class="n">InlineFormSet</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Utility-class: Collections displayed as a InlineFormset&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">ProjectCollection</span>
+	<span class="n">extra</span> <span class="o">=</span> <span class="mi">2</span>
+</div>
+<div class="viewcode-block" id="ProjectCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectCreateView">[docs]</a><span class="k">class</span> <span class="nc">ProjectCreateView</span><span class="p">(</span><span class="n">CreateWithInlinesView</span><span class="p">,</span> <span class="n">NamedFormsetsMixin</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Create view for the Project model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Project</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">ProjectForm</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/project_create.html&#39;</span>
+	<span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ProjectRoleInline</span><span class="p">,</span> <span class="n">CollectionInline</span><span class="p">]</span>
+	<span class="n">inlines_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;projectrole_formset&#39;</span><span class="p">,</span> <span class="s">&#39;collection_formset&#39;</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">get_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">initial</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjectCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_initial</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">initial</span><span class="p">[</span><span class="s">&#39;rp_pk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;rp_pk&#39;</span><span class="p">]</span>
+		<span class="c">#initial[&#39;collections&#39;] = self.kwargs[&#39;rp_pk&#39;]</span>
+		<span class="k">return</span> <span class="n">initial</span>
+
+<div class="viewcode-block" id="ProjectCreateView.forms_valid"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectCreateView.forms_valid">[docs]</a>	<span class="k">def</span> <span class="nf">forms_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">inlines</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Saves the formsets and redirects to Project&#39;s detail page.&quot;&quot;&quot;</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+		<span class="n">rproject</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">RProject</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;rp_pk&#39;</span><span class="p">])</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">research_project</span><span class="o">=</span><span class="n">rproject</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="n">projectrole_formset</span> <span class="o">=</span> <span class="n">inlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">projectrole_formset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+</div></div>
+<div class="viewcode-block" id="ProjectUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectUpdateView">[docs]</a><span class="k">class</span> <span class="nc">ProjectUpdateView</span><span class="p">(</span><span class="n">UpdateWithInlinesView</span><span class="p">,</span> <span class="n">NamedFormsetsMixin</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Update view for the Project model&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Project</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">ProjectForm</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/project_update.html&#39;</span>
+	<span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ProjectRoleInline</span><span class="p">,</span> <span class="n">CollectionInline</span><span class="p">]</span>
+	<span class="n">inlines_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;projectrole_formset&#39;</span><span class="p">,</span> <span class="s">&#39;collection_formset&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ProjectUpdateView.forms_valid"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ProjectUpdateView.forms_valid">[docs]</a>	<span class="k">def</span> <span class="nf">forms_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">inlines</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Saves the formsets and redirects to Project&#39;s detail page.&quot;&quot;&quot;</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="n">projectrole_formset</span><span class="p">,</span> <span class="n">collection_formset</span> <span class="o">=</span> <span class="n">inlines</span>
+		<span class="n">projectrole_formset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="c"># Save collection formset manually as it is defined using the intermediate model</span>
+		<span class="k">for</span> <span class="n">pc</span> <span class="ow">in</span> <span class="n">collection_formset</span><span class="p">:</span>
+			<span class="n">pc_obj</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+			<span class="n">pc_obj</span><span class="o">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">id</span>
+			<span class="n">pc_obj</span><span class="o">.</span><span class="n">collection_id</span> <span class="o">=</span> <span class="n">pc_obj</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">id</span>
+			<span class="n">pc_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+</div></div>
+<div class="viewcode-block" id="project_update"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.project_update">[docs]</a><span class="k">def</span> <span class="nf">project_update</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Project update view function.</span>
+
+<span class="sd">	.. warning::</span>
+<span class="sd">		This view is marked for depreciation. It still handles the requests, but is to be replaced</span>
+<span class="sd">		by its class-based equivalent :class:`.ProjectUpdateView`.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+
+	<span class="n">form</span> <span class="o">=</span> <span class="n">ProjectForm</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&quot;POST&quot;</span><span class="p">:</span>
+		<span class="n">form</span> <span class="o">=</span> <span class="n">ProjectForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+		<span class="n">collection_formset</span> <span class="o">=</span> <span class="n">ProjectCollectionFormset</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+		<span class="n">projectrole_formset</span> <span class="o">=</span> <span class="n">ProjectRoleFormset</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="ow">and</span> <span class="n">collection_formset</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="ow">and</span> <span class="n">projectrole_formset</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+			<span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+			<span class="n">collection_formset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+			<span class="n">projectrole_formset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+	<span class="n">collection_formset</span> <span class="o">=</span> <span class="n">ProjectCollectionFormset</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+	<span class="n">projectrole_formset</span> <span class="o">=</span> <span class="n">ProjectRoleFormset</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+
+	<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;project&#39;</span><span class="p">:</span> <span class="n">project</span><span class="p">,</span>
+			<span class="s">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">,</span>
+			<span class="s">&#39;collection_formset&#39;</span><span class="p">:</span> <span class="n">collection_formset</span><span class="p">,</span>
+			<span class="s">&#39;projectrole_formset&#39;</span><span class="p">:</span> <span class="n">projectrole_formset</span><span class="p">,}</span>
+
+	<span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;media_classification/project_update.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+
+<span class="c"># Classify / CS views</span>
+</div>
+<div class="viewcode-block" id="cs_resource_list"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.cs_resource_list">[docs]</a><span class="k">def</span> <span class="nf">cs_resource_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Displays the crowd-sourcing enabled resources list.&quot;&quot;&quot;</span>
+	<span class="c"># TODO: This view should be converted to a class-based one</span>
+
+	<span class="n">projects</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">cs_enabled</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+	<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+		<span class="n">resources</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">get_all_cs_resources</span><span class="p">()</span>
+		<span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">project</span><span class="p">,</span> <span class="n">resources</span><span class="p">))</span>
+	<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+	<span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;media_classification/cs_resource_list.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="classify_resource"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.classify_resource">[docs]</a><span class="k">def</span> <span class="nf">classify_resource</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">resource_id</span><span class="p">,</span> <span class="n">project_id</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Prepares the context for the classification table (i.e. feature sets), and renders it on a template.&quot;&quot;&quot;</span>
+
+	<span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">resource_id</span><span class="p">)</span>
+	<span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
+	<span class="n">feature_set</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">feature_sets</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">resource_type</span><span class="o">=</span><span class="n">resource</span><span class="o">.</span><span class="n">resource_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">features</span> <span class="o">=</span> <span class="p">[[</span><span class="n">feature</span><span class="p">,</span> <span class="n">FeatureScope</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="o">.</span><span class="n">pk</span><span class="p">)]</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">feature_set</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">all</span><span class="p">()]</span>
+	<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;resource&#39;</span><span class="p">:</span> <span class="n">resource</span><span class="p">,</span> <span class="s">&#39;project&#39;</span><span class="p">:</span> <span class="n">project</span><span class="p">,</span> <span class="s">&#39;features&#39;</span><span class="p">:</span> <span class="n">features</span><span class="p">}</span>
+	<span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;media_classification/classify_resource.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</div>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="process_classify"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.process_classify">[docs]</a><span class="k">def</span> <span class="nf">process_classify</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Processes the classification POST request.</span>
+<span class="sd">	Breaks down the POST kwargs describing the classification table and adds saves the corresponding model instances:</span>
+
+<span class="sd">	* :class:`.Classification`</span>
+<span class="sd">	* :class:`.ClassificationRow`</span>
+<span class="sd">	* :class:`.FeatureAnswer`</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">project_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">&#39;project_id&#39;</span><span class="p">])</span>
+	<span class="n">resource_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">&#39;resource_id&#39;</span><span class="p">])</span>
+
+	<span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">resource_id</span><span class="p">)</span>
+	<span class="n">project</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
+	<span class="n">feature_set</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">feature_sets</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">resource_type</span><span class="o">=</span><span class="n">resource</span><span class="o">.</span><span class="n">resource_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="n">answers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;__&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">,]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="s">&quot;__&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">)</span>
+	<span class="n">answer_rows</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">answers</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">answer_rows</span><span class="p">:</span>
+			<span class="n">answer_rows</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">answer_rows</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+	<span class="n">answer_rows</span> <span class="o">=</span> <span class="p">[</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">answer_rows</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span> <span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+
+	<span class="n">c</span> <span class="o">=</span> <span class="n">Classification</span><span class="p">(</span><span class="n">resource</span><span class="o">=</span><span class="n">resource</span><span class="p">,</span> <span class="n">feature_set</span><span class="o">=</span><span class="n">feature_set</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+	<span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+	<span class="k">for</span> <span class="n">answer_row</span> <span class="ow">in</span> <span class="n">answer_rows</span><span class="p">:</span>
+		<span class="n">row</span> <span class="o">=</span> <span class="n">ClassificationRow</span><span class="p">(</span><span class="n">classification</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+		<span class="n">row</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">answer_row</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+			<span class="n">feature</span> <span class="o">=</span> <span class="n">Feature</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+			<span class="n">afs</span> <span class="o">=</span> <span class="n">FeatureAnswer</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">,</span> <span class="n">classification_row</span><span class="o">=</span><span class="n">row</span><span class="p">)</span>
+			<span class="n">afs</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+	<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">&#39;media_classification:classification_detail&#39;</span><span class="p">,</span><span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;pk&#39;</span><span class="p">:</span><span class="n">c</span><span class="o">.</span><span class="n">pk</span><span class="p">}))</span>
+</div>
+<div class="viewcode-block" id="ClassificationDetailView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ClassificationDetailView">[docs]</a><span class="k">class</span> <span class="nc">ClassificationDetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Detail view of the Classification object.&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Classification</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/classification_detail.html&#39;</span>
+
+</div>
+<div class="viewcode-block" id="ClassificationListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.media_classification.views.ClassificationListView">[docs]</a><span class="k">class</span> <span class="nc">ClassificationListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;List view of the Classification object.&quot;&quot;&quot;</span>
+
+	<span class="n">paginate_by</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Classification</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;classifications&#39;</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;media_classification/classification_list.html&#39;</span></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Trapper development team.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

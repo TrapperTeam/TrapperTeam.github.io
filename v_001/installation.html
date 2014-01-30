@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation guide &mdash; Trapper 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Trapper 1 documentation" href="index.html" />
+    <link rel="next" title="Tutorials" href="tutorials.html" />
+    <link rel="prev" title="Welcome to Trapper’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Trapper’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-guide">
+<h1>Installation guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
+<p>The project is developed using:</p>
+<ul class="simple">
+<li>Python 2.7.x</li>
+<li>Django 1.6</li>
+</ul>
+<p>System requirements:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.virtualenv.org">virtualenv</a></li>
+<li><a class="reference external" href="http://www.rabbitmq.com/">RabbitMQ server</a></li>
+<li>PostgreSQL 9.1 (tested on version 9.1.9)</li>
+<li>Geospatial libraries: GEOS and PROJ.4</li>
+<li>PostGIS (preferably 2.0.x)</li>
+</ul>
+<div class="section" id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Let us start with the installation of the system dependencies.
+Django and other python requirements will be installed locally inside the project using virtualenv.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This guide will cover the installation on the Ubuntu/Debian systems.
+For other systems, please use the recommended methods of package installation.</p>
+</div>
+<p>Command below will install virtualenv, postgresql, geospatial libraries, PostGIS and rabbitmq-server:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ sudo apt-get install python-virtualenv postgresql-9.1 binutils
+libproj-dev gdal-bin postgresql-server-dev-9.1
+rabbitmq-server libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev python-dev
+</pre></div>
+</div>
+<p>Before installing postgis, check which version is available at your system:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ sudo apt-get install -s postgresql-9.1-postgis | grep postgis
+</pre></div>
+</div>
+<p>It may be the case that your version is 1.5.x or lower.</p>
+<p>You can either install the available version same as before:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ sudo apt-get install postgresql-9.1-postgis
+</pre></div>
+</div>
+<p>Or you could try to find the way to obtain PostGIS 2.x for your system:</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://trac.osgeo.org/ubuntugis/wiki/UbuntuGISRepository">Adding UbuntuGIS (contains PostGIS 2.0)</a></li>
+<li><a class="reference external" href="http://blog.light42.com/wordpress/?p=1540">PostGIS 2.1 on Debian Wheezy</a></li>
+</ul>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.6/ref/contrib/gis/install/geolibs/">Installing geospatial libraries</a></li>
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.6/ref/contrib/gis/install/postgis/">Installing PostGIS</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="preparing-postgresql-database">
+<h2>Preparing PostgreSQL database<a class="headerlink" href="#preparing-postgresql-database" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will prepare the database for handling the geospatial data, as well as setup some basic user privileges.
+Before we downloading Trapper perform the following actions in a console:</p>
+<p>Now we will create a new postgresql user named <em>trapper</em>.</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ adduser trapper
+(use unix defaults here)
+user@home:~$ su - postgres
+postgres@home:~$ psql
+postgres=# CREATE USER trapper WITH PASSWORD &#39;trapper&#39;;
+CREATE ROLE
+postgres=# \q
+</pre></div>
+</div>
+<p>Snipplet above does the following:</p>
+<ol class="arabic simple">
+<li>Creates a new unix user called <em>trapper</em></li>
+<li>Switches to <em>postgres</em> user</li>
+<li>Runs <em>psql</em> command-line interface and connects to a <em>template1</em> database</li>
+<li>Creates the postgresql user <em>trapper</em></li>
+<li><tt class="docutils literal"><span class="pre">\q</span></tt> exists the psql</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">Adding postgresql user accounts</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In production code you will most likely want to create a user with a more sophisticated password (don&#8217;t forget to update the <tt class="docutils literal"><span class="pre">trapper/settings.py</span></tt> accordingly).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to run trapper&#8217;s automated unit tests user might need some additional privileges for creating databases. In order to resolve that without assigning him superuser provileges, see <a class="reference external" href="https://docs.djangoproject.com/en/dev/ref/contrib/gis/testing/#obtaining-sufficient-privileges">Obtaining sufficient privileges</a> section of the Django documentation.</p>
+</div>
+<p>Now we will create a database and set up the postgis extension on it:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ su - postgres
+postgres@home:~$ psql
+postgres=# CREATE DATABASE trapper_db OWNER trapper;
+CREATE DATABASE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE trapper_db TO trapper;
+GRANT
+postgres=# \c trapper_db
+You are now connected to database &quot;trapper_db&quot; as user &quot;postgres&quot;
+trapper_db=# CREATE EXTENSION postgis;
+CREATE EXTENSION
+trapper_db=# \q
+</pre></div>
+</div>
+<p>Snipplet above does the following:</p>
+<ol class="arabic simple">
+<li>Switches to a <em>postgres</em> user</li>
+<li>Runs <em>psql</em> command-line interface and connects to a <em>template1</em> database</li>
+<li>Creates the database named <em>trapper_db</em> and makes <em>trapper</em> its owner</li>
+<li>Connects to the newly created database</li>
+<li>installs the postgis extension (required for the geospatial features of Trapper)</li>
+<li><tt class="docutils literal"><span class="pre">\q</span></tt> exists the psql</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Creating the postgis extension (last step of the snipplet above) is a little bit more involved with PostGIS 1.x.
+For more details on how to set up a PostGIS 1.x database please refer to:</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.6/ref/contrib/gis/install/postgis/#creating-a-spatial-database-template-for-earlier-versions">Setting up PostGIS 1.x (Django documentation)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="preparing-the-project">
+<h2>Preparing the project<a class="headerlink" href="#preparing-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Next step is cloning the repository and installing python the requirements.</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ git clone https://github.com/TrapperTeam/Trapper
+user@home:~$ cd Trapper/
+user@home:~$ virtualenv env
+user@home:~$ ./env/bin/pip install -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-trapper">
+<h2>Running Trapper<a class="headerlink" href="#running-trapper" title="Permalink to this headline">¶</a></h2>
+<p>The project is now set up and ready to use.
+Initialize the database along with the test data and run the server:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ ./setup_database.sh
+user@home:~$ ./run_server.sh
+</pre></div>
+</div>
+<p>Additionally, execute a celery worker in a separate shell:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ ./run_celery.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="extra-generating-this-documentation">
+<h2>Extra: Generating this documentation<a class="headerlink" href="#extra-generating-this-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Since Trapper is developed using virtualenv, it may be difficult to generate this documentation
+using sphinx-build that&#8217;s installed system-wide. In order to resolve that simply perform the following steps:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">$TRAPPER_ROOT</span></tt> is the path the Trapper on your system, e.g. <tt class="docutils literal"><span class="pre">/home/user/MyProjects/Trapper/</span></tt></p>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ cd $TRAPPER_ROOT
+user@home:~$ which sphinx-build
+/usr/bin/sphinx-build (or other system path)
+user@home:~$ source ./env/bin/activate
+user@home:~$ which sphinx-build
+$TRAPPER_ROOT/env/bin/sphinx-build
+</pre></div>
+</div>
+<p>After that you should be able to generate this document without problems:</p>
+<div class="highlight-none"><div class="highlight"><pre>user@home:~$ cd $TRAPPER_ROOT/docs/
+user@home:~$ make html
+</pre></div>
+</div>
+<p>After that, this website will reside in <tt class="docutils literal"><span class="pre">$TRAPPER_ROOT/docs/_build</span></tt> directory.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation guide</a><ul>
+<li><a class="reference internal" href="#system-requirements">System requirements</a></li>
+<li><a class="reference internal" href="#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li><a class="reference internal" href="#preparing-the-project">Preparing the project</a></li>
+<li><a class="reference internal" href="#running-trapper">Running Trapper</a></li>
+<li><a class="reference internal" href="#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Trapper&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorials.html"
+                        title="next chapter">Tutorials</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tutorials.html" title="Tutorials"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Trapper’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Trapper development team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>

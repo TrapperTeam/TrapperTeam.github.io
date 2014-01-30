@@ -1,68 +1,236 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Technical documentation: Core modules &mdash; Trapper 1 documentation</title>
-    
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Technical documentation: Core modules &mdash; Trapper 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
+        URL_ROOT:'./',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Trapper 1 documentation" href="index.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Technical documentation: Overview" href="technical_doc_part_1.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="troubleshooting.html" title="Troubleshooting"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="technical_doc_part_1.html" title="Technical documentation: Overview"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Trapper 1 documentation" href="index.html"/>
+        <link rel="next" title="Troubleshooting" href="troubleshooting.html"/>
+        <link rel="prev" title="Technical documentation: Overview" href="technical_doc_part_1.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Trapper</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#preparing-the-project">Preparing the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#running-trapper">Running Trapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-roles">System roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#anonymous-user">Anonymous user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#crowd-sourcing-user">Crowd-Sourcing user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#expert-user">Expert user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#trapper-staff">Trapper staff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical_doc_part_1.html">Technical documentation: Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technical_doc_part_1.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical_doc_part_1.html#django-applications">Django applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical_doc_part_1.html#coding-style">Coding style</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Technical documentation: Core modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage">storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#media-classification">media_classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messaging">messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geomap">geomap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common">common</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#error-could-not-open-extension-control-file-usr-share-postgresql-9-1-extension-postgis-control">ERROR: could not open extension control file &#8220;/usr/share/postgresql/9.1/extension/postgis.control&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute to Trapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#irc-webchat">IRC Webchat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#trapper-development-team">Trapper development team</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Trapper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Technical documentation: Core modules</a></li>
+  
+</ul>
+<hr/>
+
+          
   <div class="section" id="technical-documentation-core-modules">
 <h1>Technical documentation: Core modules<a class="headerlink" href="#technical-documentation-core-modules" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="accounts">
 <span id="trapper-apps-accounts"></span><h2>accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
 <p>Accounts module is responsible for extending the <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt> model.
-It provides a <tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.accounts.models.UserProfile</span></tt> model which extends some basic user functionality.</p>
-<div class="section" id="models">
-<h3>models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h3>
+It provides a <a class="reference internal" href="#trapper.apps.accounts.models.UserProfile" title="trapper.apps.accounts.models.UserProfile"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.accounts.models.UserProfile</span></tt></a> model which extends some basic user functionality.</p>
+<div class="section" id="module-trapper.apps.accounts.models">
+<span id="models"></span><h3>models<a class="headerlink" href="#module-trapper.apps.accounts.models" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="trapper.apps.accounts.models.UserProfile">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.models.</tt><tt class="descname">UserProfile</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/models.html#UserProfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.models.UserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends the <tt class="xref py py-class docutils literal"><span class="pre">User</span></tt> class through a OneToOneField.
+Additionally, it provides some extra methods for other applications such as <a class="reference internal" href="#trapper-apps-messaging"><em>messaging</em></a>.</p>
+<dl class="method">
+<dt id="trapper.apps.accounts.models.UserProfile.count_unread_messages">
+<tt class="descname">count_unread_messages</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/models.html#UserProfile.count_unread_messages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.models.UserProfile.count_unread_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of unread messages.
+(see <a class="reference internal" href="#trapper.apps.messaging.models.Message" title="trapper.apps.messaging.models.Message"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.messaging.models.Message</span></tt></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.accounts.models.UserProfile.count_unresolved_system_notifications">
+<tt class="descname">count_unresolved_system_notifications</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/models.html#UserProfile.count_unresolved_system_notifications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.models.UserProfile.count_unresolved_system_notifications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of unresolved system notifications.
+(see <a class="reference internal" href="#trapper.apps.messaging.models.SystemNotification" title="trapper.apps.messaging.models.SystemNotification"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.messaging.models.SystemNotification</span></tt></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.accounts.models.UserProfile.has_unread_messages">
+<tt class="descname">has_unread_messages</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/models.html#UserProfile.has_unread_messages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.models.UserProfile.has_unread_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether user has any unread messages
+(see <a class="reference internal" href="#trapper.apps.messaging.models.Message" title="trapper.apps.messaging.models.Message"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.messaging.models.Message</span></tt></a>).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trapper.apps.accounts.models.set_user_as_staff">
+<tt class="descclassname">trapper.apps.accounts.models.</tt><tt class="descname">set_user_as_staff</tt><big>(</big><em>sender</em>, <em>instance</em>, <em>action</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/models.html#set_user_as_staff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.models.set_user_as_staff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the pre_save signal of the User model.
+Sets the is_staff flag on user by default for certain auth.models.Group instances.
+This functionality is redundant as model permissions are not relevant.</p>
+</dd></dl>
+
 </div>
-<div class="section" id="views">
-<h3>views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="module-trapper.apps.accounts.views">
+<span id="views"></span><h3>views<a class="headerlink" href="#module-trapper.apps.accounts.views" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="trapper.apps.accounts.views.SessionUserProfileDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.views.</tt><tt class="descname">SessionUserProfileDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/views.html#SessionUserProfileDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.views.SessionUserProfileDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the profile details about user stored in session.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.accounts.views.UserProfileDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.views.</tt><tt class="descname">UserProfileDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/views.html#UserProfileDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.views.UserProfileDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the profile details about an arbitrary user.</p>
+<dl class="attribute">
+<dt id="trapper.apps.accounts.views.UserProfileDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.accounts.views.UserProfileDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">User</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.accounts.views.UserProfileUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.views.</tt><tt class="descname">UserProfileUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/views.html#UserProfileUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.views.UserProfileUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view for the user profile.</p>
+<dl class="attribute">
+<dt id="trapper.apps.accounts.views.UserProfileUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.accounts.views.UserProfileUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">User</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.accounts.views.UserRegistrationView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.accounts.views.</tt><tt class="descname">UserRegistrationView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/accounts/views.html#UserRegistrationView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.accounts.views.UserRegistrationView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the user registration form and creates a new user.</p>
+<dl class="attribute">
+<dt id="trapper.apps.accounts.views.UserRegistrationView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.accounts.views.UserRegistrationView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">UserCreationForm</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-trapper.apps.accounts.forms">
 <span id="forms"></span><h3>forms<a class="headerlink" href="#module-trapper.apps.accounts.forms" title="Permalink to this headline">¶</a></h3>
@@ -81,18 +249,449 @@ In most cases this will be video files, images or audio files, but any type of f
 It is often used by other applications (e.g. <tt class="xref py py-mod docutils literal"><span class="pre">trapper.apps.media_classification</span></tt>) to display media resources.</p>
 <div class="section" id="id1">
 <h3>models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.storage.models"></span><p>Module for storage application.</p>
+<dl class="class">
+<dt id="trapper.apps.storage.models.Collection">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.models.</tt><tt class="descname">Collection</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Collection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection of resources sharing a common origin (e.g. ownership or a recording session).</p>
+<p>At core, this model is just an aggregation of <a class="reference internal" href="#trapper.apps.storage.models.Resource" title="trapper.apps.storage.models.Resource"><tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></a> objects.
+Additionally, permissions to alter given collection are given only to the users belonging to <em>managers</em> or the <em>owner</em>.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.models.Collection.get_absolute_url">
+<tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Collection.get_absolute_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Collection.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the absolute url for an instance of this model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.models.CollectionUploadJob">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.models.</tt><tt class="descname">CollectionUploadJob</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#CollectionUploadJob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.CollectionUploadJob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job-like model for the collection upload requests.
+A single CollectionUploadJob instance contains both the definition of the collections, as well as the archive file with the data.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.models.CollectionUploadJob.resolve_as_error">
+<tt class="descname">resolve_as_error</tt><big>(</big><em>error_message</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#CollectionUploadJob.resolve_as_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.CollectionUploadJob.resolve_as_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut function for resolving given job with an error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>error_message</strong> (<em>str</em>) &#8211; mandatory error_message</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.CollectionUploadJob.resolve_as_ok">
+<tt class="descname">resolve_as_ok</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#CollectionUploadJob.resolve_as_ok"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.CollectionUploadJob.resolve_as_ok" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut function for resolving given job with a success.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.CollectionUploadJob.set_status">
+<tt class="descname">set_status</tt><big>(</big><em>status</em>, <em>error_message=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#CollectionUploadJob.set_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.CollectionUploadJob.set_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the status for the job.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>status</strong> (<em>int</em>) &#8211; status code</li>
+<li><strong>error_message</strong> (<em>str</em>) &#8211; optional error message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.models.Resource">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.models.</tt><tt class="descname">Resource</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model describing a single resource.
+Resource is usually a video or an image.
+In order to provide some robust playback features, it is possible to upload
+up to two separate resource files (e.g. in both <em>.mp4</em> and <em>.webm</em> format for better browser compatibility).</p>
+<dl class="method">
+<dt id="trapper.apps.storage.models.Resource.get_absolute_url">
+<tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource.get_absolute_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the absolute url for an instance of this model.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.Resource.update_metadata">
+<tt class="descname">update_metadata</tt><big>(</big><em>commit=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource.update_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource.update_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the internal metadata about the resource.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commit</strong> (<em>bool</em>) &#8211; States whether to perform self.save() at the end of this method</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.Resource.update_mimetype">
+<tt class="descname">update_mimetype</tt><big>(</big><em>commit=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource.update_mimetype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource.update_mimetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the mime_type for the resource.
+This is obtained by trying to <em>guess</em> the mime type based on the resource file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commit</strong> (<em>bool</em>) &#8211; States whether to perform self.save() at the end of this method</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.Resource.update_resource_type">
+<tt class="descname">update_resource_type</tt><big>(</big><em>commit=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource.update_resource_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource.update_resource_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets resource_type based on mime_type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commit</strong> (<em>bool</em>) &#8211; States whether to perform self.save() at the end of this method</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.models.Resource.update_thumbnail">
+<tt class="descname">update_thumbnail</tt><big>(</big><em>commit=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/models.html#Resource.update_thumbnail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.models.Resource.update_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the thumbnail for video and image resources</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commit</strong> (<em>bool</em>) &#8211; States whether to perform self.save() at the end of this method</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id2">
 <h3>views<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.storage.views"></span><dl class="class">
+<dt id="trapper.apps.storage.views.CollectionCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection&#8217;s create view.
+Handles the creation of the Collection object.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionCreateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionCreateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">CollectionForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.CollectionDeleteView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionDeleteView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionDeleteView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionDeleteView" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class handles the deletion of the <a class="reference internal" href="#trapper.apps.storage.models.Collection" title="trapper.apps.storage.models.Collection"><tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></a> object.
+The collection object can be deleted by the managers and the owner of the collection.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionDeleteView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionDeleteView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.CollectionRequestView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionRequestView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionRequestView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionRequestView" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the view generating the collection request page for the <a class="reference internal" href="#trapper.apps.media_classification.models.Project" title="trapper.apps.media_classification.models.Project"><tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></a>.
+It will only display the projects in which the user has the admin <a class="reference internal" href="#trapper.apps.media_classification.models.ProjectRole" title="trapper.apps.media_classification.models.ProjectRole"><tt class="xref py py-class docutils literal"><span class="pre">ProjectRole</span></tt></a>.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionRequestView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionRequestView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">CollectionRequestForm</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.CollectionRequestView.form_valid">
+<tt class="descname">form_valid</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionRequestView.form_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionRequestView.form_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#trapper.apps.messaging.models.Message" title="trapper.apps.messaging.models.Message"><tt class="xref py py-class docutils literal"><span class="pre">Message</span></tt></a> and <a class="reference internal" href="#trapper.apps.messaging.models.CollectionRequest" title="trapper.apps.messaging.models.CollectionRequest"><tt class="xref py py-class docutils literal"><span class="pre">CollectionRequest</span></tt></a> objects
+directed at the owner of the collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.CollectionRequestView.get_form">
+<tt class="descname">get_form</tt><big>(</big><em>form_class</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionRequestView.get_form"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionRequestView.get_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the form the request view.</p>
+<p>FEATURE REQUEST:
+Logic below should be in <tt class="xref py py-meth docutils literal"><span class="pre">self.get_initial()</span></tt> method.
+For some reason, the initial data for &#8216;project&#8217; does not work as expected.
+Specifically, ModelChoiceField does not initialize with a QuerySet through the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.CollectionRequestView.get_initial">
+<tt class="descname">get_initial</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionRequestView.get_initial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionRequestView.get_initial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the form with the projects query, as well as the collection in question.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.CollectionUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection&#8217;s update view.
+Handles the update of the Collection object.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionUpdateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionUpdateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">CollectionForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.CollectionUploadView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionUploadView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionUploadView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadView" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the first controller of the two-step process of uploading a collection data (also called <strong>batch_uploading</strong>).
+This view displays a form with a single file upload input for the definition file.
+The file is validated and then the <a class="reference internal" href="#trapper.apps.storage.models.CollectionUploadJob" title="trapper.apps.storage.models.CollectionUploadJob"><tt class="xref py py-class docutils literal"><span class="pre">CollectionUploadJob</span></tt></a> object is created.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionUploadView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">CollectionUploadForm</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.CollectionUploadView.form_valid">
+<tt class="descname">form_valid</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionUploadView.form_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadView.form_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the configuration file using <a class="reference internal" href="#trapper.apps.storage.forms.CollectionUploadForm.validate_config_file" title="trapper.apps.storage.forms.CollectionUploadForm.validate_config_file"><tt class="xref py py-meth docutils literal"><span class="pre">CollectionUploadForm.validate_config_file()</span></tt></a>,
+and creates the <a class="reference internal" href="#trapper.apps.storage.models.CollectionUploadJob" title="trapper.apps.storage.models.CollectionUploadJob"><tt class="xref py py-class docutils literal"><span class="pre">CollectionUploadJob</span></tt></a> object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.CollectionUploadViewPart2">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">CollectionUploadViewPart2</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionUploadViewPart2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadViewPart2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection&#8217;s upload view.
+This is the second part of the collection upload process.
+See <a class="reference internal" href="#trapper.apps.storage.views.CollectionUploadView" title="trapper.apps.storage.views.CollectionUploadView"><tt class="xref py py-class docutils literal"><span class="pre">CollectionUploadView</span></tt></a> for more details.
+This view handles the processing of the uploaded archive file, as well as its validation and the final
+uploading action.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.CollectionUploadViewPart2.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadViewPart2.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">CollectionUploadFormPart2</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.CollectionUploadViewPart2.form_valid">
+<tt class="descname">form_valid</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#CollectionUploadViewPart2.form_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.CollectionUploadViewPart2.form_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the uploaded archive file and delegates a
+<tt class="xref py py-func docutils literal"><span class="pre">process_collection_upload()</span></tt> task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.ResourceCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">ResourceCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view of the resource object.
+Given resource can be updated when user passes an access function.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceCreateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceCreateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ResourceForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.ResourceDeleteView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">ResourceDeleteView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceDeleteView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceDeleteView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete view of the resource object.
+Given resource can be removed when user is the owner or the uploader of the resource.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceDeleteView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceDeleteView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.ResourceListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">ResourceListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the list of <a class="reference internal" href="#trapper.apps.storage.models.Resource" title="trapper.apps.storage.models.Resource"><tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></a> objects.</p>
+<p>This view employs the filtering features.
+For that reason, the <tt class="xref py py-meth docutils literal"><span class="pre">django.views.generic.ListView.get_queryset()</span></tt> was overloaded.
+The method filters the standard result according to the passed GET parameters.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.views.ResourceListView.get_context_data">
+<tt class="descname">get_context_data</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceListView.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceListView.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the context data supplemented by the filtering form as well as previous filtering parameters for the initial values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.storage.views.ResourceListView.get_queryset">
+<tt class="descname">get_queryset</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceListView.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceListView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the queryset filtered by the GET parameters (see <tt class="xref py py-class docutils literal"><span class="pre">ResourceFilter</span></tt>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.ResourceUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">ResourceUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#ResourceUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.ResourceUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view of the resource object.
+Given resource can be updated when user passes <tt class="xref py py-func docutils literal"><span class="pre">Resource.can_update()</span></tt> check.</p>
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceUpdateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceUpdateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ResourceForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.ResourceUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.ResourceUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.UserCollectionListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">UserCollectionListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#UserCollectionListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.UserCollectionListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection list, initially filtered by the collections owned by given user.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.views.UserCollectionListView.get_queryset">
+<tt class="descname">get_queryset</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#UserCollectionListView.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.UserCollectionListView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the queryset according to the user&#8217;s id.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.storage.views.UserCollectionListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.storage.views.UserCollectionListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.views.UserResourceListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.views.</tt><tt class="descname">UserResourceListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#UserResourceListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.UserResourceListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the list of resources of given <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>
+It mirrors the functionality of <a class="reference internal" href="#trapper.apps.storage.views.ResourceListView" title="trapper.apps.storage.views.ResourceListView"><tt class="xref py py-class docutils literal"><span class="pre">ResourceListView</span></tt></a>,
+except it filters the queryset initally according to the resource ownership.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.views.UserResourceListView.get_queryset">
+<tt class="descname">get_queryset</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/views.html#UserResourceListView.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.views.UserResourceListView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the queryset filtered by the resources which are owned by given user.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id3">
 <h3>forms<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.storage.forms"></span><dl class="class">
+<dt id="trapper.apps.storage.forms.CollectionForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.forms.</tt><tt class="descname">CollectionForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#CollectionForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.CollectionForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model form for creating and updating <a class="reference internal" href="#trapper.apps.storage.models.Collection" title="trapper.apps.storage.models.Collection"><tt class="xref py py-class docutils literal"><span class="pre">Collection</span></tt></a> objects</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.forms.CollectionRequestForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.forms.</tt><tt class="descname">CollectionRequestForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#CollectionRequestForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.CollectionRequestForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a form for creating a collection request for the <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt> object.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.forms.CollectionUploadForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.forms.</tt><tt class="descname">CollectionUploadForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#CollectionUploadForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.CollectionUploadForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a form for uploading a collection from the archive.
+This form handles the <strong>first step</strong> of the action - uploading and validating the definition file.
+The validation is done by the <tt class="xref py py-class docutils literal"><span class="pre">ConfigFileValidator</span></tt> object.</p>
+<dl class="method">
+<dt id="trapper.apps.storage.forms.CollectionUploadForm.validate_config_file">
+<tt class="descname">validate_config_file</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#CollectionUploadForm.validate_config_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.CollectionUploadForm.validate_config_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the config file using the <tt class="xref py py-class docutils literal"><span class="pre">ConfigFileValidator</span></tt> object.
+<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt> object is provided as a parameter, because
+the definition may require to perform action which may not be permitted for the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; instance of the who requests the validation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.forms.CollectionUploadFormPart2">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.forms.</tt><tt class="descname">CollectionUploadFormPart2</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#CollectionUploadFormPart2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.CollectionUploadFormPart2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a form for uploading a collection from the archive.
+This form handles the <strong>second step</strong> of the action - uploading the archive file.
+There is no archive validation done in this form (as it was in the first step) because
+the final action is delegated to the task daemon.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.storage.forms.ResourceForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.storage.forms.</tt><tt class="descname">ResourceForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#ResourceForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.ResourceForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model form for creating and updating <a class="reference internal" href="#trapper.apps.storage.models.Resource" title="trapper.apps.storage.models.Resource"><tt class="xref py py-class docutils literal"><span class="pre">Resource</span></tt></a> objects</p>
+<dl class="method">
+<dt id="trapper.apps.storage.forms.ResourceForm.save">
+<tt class="descname">save</tt><big>(</big><em>force_insert=False</em>, <em>force_update=False</em>, <em>commit=True</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/storage/forms.html#ResourceForm.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.storage.forms.ResourceForm.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>On resource save, the update of the metadata is performed
+(see <a class="reference internal" href="#trapper.apps.storage.models.Resource.update_metadata" title="trapper.apps.storage.models.Resource.update_metadata"><tt class="xref py py-meth docutils literal"><span class="pre">Resource.update_metadata()</span></tt></a>)</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="media-classification">
 <span id="trapper-apps-media-classification"></span><h2>media_classification<a class="headerlink" href="#media-classification" title="Permalink to this headline">¶</a></h2>
 <p>Media classification module is at the moment one of the core features of Trapper.
-This module allows for the classification of media resources (<a class="reference internal" href="#trapper-apps-storage"><em>storage</em></a>) within the context defined in <tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Project</span></tt> objects.</p>
+This module allows for the classification of media resources (<a class="reference internal" href="#trapper-apps-storage"><em>storage</em></a>) within the context defined in <a class="reference internal" href="#trapper.apps.media_classification.models.Project" title="trapper.apps.media_classification.models.Project"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Project</span></tt></a> objects.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>It is worth noting how the classification is handled in the backend:
@@ -100,22 +699,666 @@ Single <tt class="docutils literal"><span class="pre">Classification</span></tt>
 rows, each containing an indentical set of features. Each <tt class="docutils literal"><span class="pre">ClassificationRow</span></tt> is again split into a set of <em>states</em> of the Feature model, namely an instance of model <tt class="docutils literal"><span class="pre">FeatureAnswer</span></tt></p>
 <p>See models for more details:</p>
 <ul class="last simple">
-<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Classification</span></tt></li>
-<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.ClassificationRow</span></tt></li>
-<li><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.FeatureAnswer</span></tt></li>
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.Classification" title="trapper.apps.media_classification.models.Classification"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.Classification</span></tt></a></li>
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.ClassificationRow" title="trapper.apps.media_classification.models.ClassificationRow"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.ClassificationRow</span></tt></a></li>
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.FeatureAnswer" title="trapper.apps.media_classification.models.FeatureAnswer"><tt class="xref py py-class docutils literal"><span class="pre">trapper.apps.media_classification.models.FeatureAnswer</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>models<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.media_classification.models"></span><dl class="class">
+<dt id="trapper.apps.media_classification.models.Classification">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">Classification</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Classification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Classification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classification made by the Crowd-sourcing user.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This model is a top-most object in a single classification.
+It&#8217;s tightly connected with <a class="reference internal" href="#trapper.apps.media_classification.models.ClassificationRow" title="trapper.apps.media_classification.models.ClassificationRow"><tt class="xref py py-class docutils literal"><span class="pre">ClassificationRow</span></tt></a> and <a class="reference internal" href="#trapper.apps.media_classification.models.FeatureAnswer" title="trapper.apps.media_classification.models.FeatureAnswer"><tt class="xref py py-class docutils literal"><span class="pre">FeatureAnswer</span></tt></a> models.</p>
+<p class="last">Since classification table is composed of rows (which are defined dynamically),
+the rows themselves are stored in database as entries of ClassificationRow model.
+Each row on the other hand can contain a set of <em>states</em> for each feature, be it a numerical value,
+or a certain state of the FeatureScope model.</p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.ClassificationRow">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">ClassificationRow</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#ClassificationRow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.ClassificationRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes a single &#8220;row&#8221; in a classification table.
+The instances of this model is aggregated by an instance Classification model.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.Classification" title="trapper.apps.media_classification.models.Classification"><tt class="xref py py-class docutils literal"><span class="pre">Classification</span></tt></a></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.Feature">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">Feature</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model describing given feature of an animal.
+Used for defining given &#8220;set&#8221; of features we are interested in identifying from given resource.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Feature can be of given type, which at the moment can be either:</p>
+<ul class="last simple">
+<li>String (enum)</li>
+<li>Integer</li>
+<li>Float</li>
+<li>Boolean</li>
+</ul>
+</div>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Feature.feature_type">
+<tt class="descname">feature_type</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.Feature.feature_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of the feature</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.Feature.get_short_name">
+<tt class="descname">get_short_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Feature.get_short_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Feature.get_short_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get short name of the feature.
+It is used for displaying a shorter name in the form.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Feature.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.Feature.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long name of feature</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Feature.short_name">
+<tt class="descname">short_name</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.Feature.short_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Short name of feature displayed on a form</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.FeatureAnswer">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">FeatureAnswer</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#FeatureAnswer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.FeatureAnswer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single state of the <a class="reference internal" href="#trapper.apps.media_classification.models.Feature" title="trapper.apps.media_classification.models.Feature"><tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></a> model.
+The instances of this model are aggregated by an instance ClassificationRow model.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.ClassificationRow" title="trapper.apps.media_classification.models.ClassificationRow"><tt class="xref py py-class docutils literal"><span class="pre">ClassificationRow</span></tt></a></li>
+</ul>
+</div>
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.FeatureAnswer.get_display_name">
+<tt class="descname">get_display_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#FeatureAnswer.get_display_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.FeatureAnswer.get_display_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name that is to be displayed on a website.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.FeatureScope">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">FeatureScope</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#FeatureScope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.FeatureScope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model describing the scope of given feature.
+Only relevant if the feature is of type &#8216;String&#8217;.</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.FeatureScope.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.FeatureScope.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the scope&#8217;s item</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.FeatureSet">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">FeatureSet</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#FeatureSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.FeatureSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defined group of features describing given classification table.
+Such set is defined per-resource type, and is defined in given classification project.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.Project">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">Project</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes a single classification project existing withing the system</p>
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.Project.can_detail">
+<tt class="descname">can_detail</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Project.can_detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Project.can_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether given user can see the details of a project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; user for which the check is made</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if user can see the details of the project, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.Project.can_update">
+<tt class="descname">can_update</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Project.can_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Project.can_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether given user can update the project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; user for which the test is made</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if user can edit the project, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Project.collections">
+<tt class="descname">collections</tt><a class="headerlink" href="#trapper.apps.media_classification.models.Project.collections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collections assigned to the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Project.cs_enabled">
+<tt class="descname">cs_enabled</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.Project.cs_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is crowd-sourcing enabled for the project ?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.Project.determine_roles">
+<tt class="descname">determine_roles</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Project.determine_roles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Project.determine_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of project roles for given user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; user for which the roles are determined</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of role names of given user withing the project</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.Project.feature_sets">
+<tt class="descname">feature_sets</tt><a class="headerlink" href="#trapper.apps.media_classification.models.Project.feature_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feature sets definitions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.models.Project.get_all_cs_resources">
+<tt class="descname">get_all_cs_resources</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Project.get_all_cs_resources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Project.get_all_cs_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of crowd-sourcing enabled resources for given project.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.ProjectCollection">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">ProjectCollection</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#ProjectCollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Many-To-Many model for Project-Collection relationship.</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.ProjectCollection.active">
+<tt class="descname">active</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectCollection.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is collection &#8220;active&#8221; within the project at given moment ?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.ProjectCollection.cs_enabled">
+<tt class="descname">cs_enabled</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectCollection.cs_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is collection available for the crowd-sourcing ?</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.ProjectRole">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">ProjectRole</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#ProjectRole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectRole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model describing the user&#8217;s role withing given <a class="reference internal" href="#trapper.apps.media_classification.models.Project" title="trapper.apps.media_classification.models.Project"><tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></a></p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.ProjectRole.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectRole.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Role name</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.ProjectRole.project">
+<tt class="descname">project</tt><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectRole.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project for which the role is defined</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.models.ProjectRole.user">
+<tt class="descname">user</tt><a class="headerlink" href="#trapper.apps.media_classification.models.ProjectRole.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>User for which the role is defined</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.models.Sequence">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.models.</tt><tt class="descname">Sequence</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/models.html#Sequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.models.Sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sequence of resources identified by an expert.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="id5">
 <h3>views<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.media_classification.views"></span><dl class="class">
+<dt id="trapper.apps.media_classification.views.ClassificationDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ClassificationDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ClassificationDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ClassificationDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detail view of the Classification object.</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ClassificationDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ClassificationDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Classification</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ClassificationListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ClassificationListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ClassificationListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ClassificationListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>List view of the Classification object.</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ClassificationListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ClassificationListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Classification</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.CollectionInline">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">CollectionInline</tt><big>(</big><em>parent_model</em>, <em>request</em>, <em>instance</em>, <em>view_kwargs=None</em>, <em>view=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#CollectionInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.CollectionInline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility-class: Collections displayed as a InlineFormset</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.CollectionInline.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.CollectionInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectCollection</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view of the Feature model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detail view of the Feature model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureInline">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureInline</tt><big>(</big><em>parent_model</em>, <em>request</em>, <em>instance</em>, <em>view_kwargs=None</em>, <em>view=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureInline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility-class: Features displayed as a InlineFormset</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureInline.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FeatureSet_features</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>List view of the Feature model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureSetCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureSetCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureSetCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view of the FeatureSet model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureSetCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FeatureSet</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureSetDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureSetDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureSetDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detail view of a single FeatureSet model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureSetDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FeatureSet</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureSetListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureSetListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureSetListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>List view of a FeatureSet model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureSetListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FeatureSet</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureSetUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureSetUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureSetUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view of the FeatureSet model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureSetUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureSetUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FeatureSet</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.FeatureUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">FeatureUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#FeatureUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view of the Feature model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.FeatureUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.FeatureUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Feature</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ProjectCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ProjectCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view for the Project model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectCreateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectCreateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectForm</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.views.ProjectCreateView.forms_valid">
+<tt class="descname">forms_valid</tt><big>(</big><em>form</em>, <em>inlines</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectCreateView.forms_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectCreateView.forms_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the formsets and redirects to Project&#8217;s detail page.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ProjectDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ProjectDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detail view for the Project model</p>
+<dl class="method">
+<dt id="trapper.apps.media_classification.views.ProjectDetailView.access_func">
+<tt class="descname">access_func</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectDetailView.access_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether given user can see the details of a project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; user for which the check is made</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if user can see the details of the project, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ProjectListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ProjectListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>List view of the Project model</p>
+<dl class="method">
+<dt id="trapper.apps.media_classification.views.ProjectListView.get_queryset">
+<tt class="descname">get_queryset</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectListView.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectListView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Besides getting the queryset, determines the permissions for request.user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of tuples, each containing the following: (<a class="reference internal" href="#trapper.apps.media_classification.models.Project" title="trapper.apps.media_classification.models.Project"><tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></a>, user_can_view, user_can_edit)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ProjectRoleInline">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ProjectRoleInline</tt><big>(</big><em>parent_model</em>, <em>request</em>, <em>instance</em>, <em>view_kwargs=None</em>, <em>view=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectRoleInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectRoleInline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility-class: ProjectRoles displayed as a InlineFormset</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectRoleInline.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectRoleInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectRole</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.ProjectUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">ProjectUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update view for the Project model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectUpdateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectUpdateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectForm</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.media_classification.views.ProjectUpdateView.forms_valid">
+<tt class="descname">forms_valid</tt><big>(</big><em>form</em>, <em>inlines</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#ProjectUpdateView.forms_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectUpdateView.forms_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the formsets and redirects to Project&#8217;s detail page.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.ProjectUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.ProjectUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.SequenceCreateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">SequenceCreateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#SequenceCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view for the Sequence model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceCreateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceCreateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SequenceForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceCreateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceCreateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Sequence</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.SequenceDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">SequenceDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#SequenceDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view for the Sequence model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Sequence</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.SequenceListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">SequenceListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#SequenceListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view for the Sequence model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Sequence</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.views.SequenceUpdateView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">SequenceUpdateView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#SequenceUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create view for the Sequence model</p>
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceUpdateView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceUpdateView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SequenceForm</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.views.SequenceUpdateView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.media_classification.views.SequenceUpdateView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Sequence</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trapper.apps.media_classification.views.classify_resource">
+<tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">classify_resource</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#classify_resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.classify_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares the context for the classification table (i.e. feature sets), and renders it on a template.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trapper.apps.media_classification.views.cs_resource_list">
+<tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">cs_resource_list</tt><big>(</big><em>request</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#cs_resource_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.cs_resource_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the crowd-sourcing enabled resources list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trapper.apps.media_classification.views.process_classify">
+<tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">process_classify</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#process_classify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.process_classify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the classification POST request.
+Breaks down the POST kwargs describing the classification table and adds saves the corresponding model instances:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.Classification" title="trapper.apps.media_classification.models.Classification"><tt class="xref py py-class docutils literal"><span class="pre">Classification</span></tt></a></li>
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.ClassificationRow" title="trapper.apps.media_classification.models.ClassificationRow"><tt class="xref py py-class docutils literal"><span class="pre">ClassificationRow</span></tt></a></li>
+<li><a class="reference internal" href="#trapper.apps.media_classification.models.FeatureAnswer" title="trapper.apps.media_classification.models.FeatureAnswer"><tt class="xref py py-class docutils literal"><span class="pre">FeatureAnswer</span></tt></a></li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="trapper.apps.media_classification.views.project_update">
+<tt class="descclassname">trapper.apps.media_classification.views.</tt><tt class="descname">project_update</tt><big>(</big><em>request</em>, <em>pk</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/views.html#project_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.views.project_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project update view function.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This view is marked for depreciation. It still handles the requests, but is to be replaced
+by its class-based equivalent <a class="reference internal" href="#trapper.apps.media_classification.views.ProjectUpdateView" title="trapper.apps.media_classification.views.ProjectUpdateView"><tt class="xref py py-class docutils literal"><span class="pre">ProjectUpdateView</span></tt></a>.</p>
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="id6">
 <h3>forms<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.media_classification.forms"></span><dl class="class">
+<dt id="trapper.apps.media_classification.forms.ProjectCollectionForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.forms.</tt><tt class="descname">ProjectCollectionForm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/forms.html#ProjectCollectionForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.forms.ProjectCollectionForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>ProjectCollection ModelForm for the Update/Create views</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.forms.ProjectCollectionFormset">
+<tt class="descclassname">trapper.apps.media_classification.forms.</tt><tt class="descname">ProjectCollectionFormset</tt><a class="headerlink" href="#trapper.apps.media_classification.forms.ProjectCollectionFormset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formset for the ProjectCollection model</p>
+<p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectCollectionFormFormSet</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.forms.ProjectForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.forms.</tt><tt class="descname">ProjectForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/forms.html#ProjectForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.forms.ProjectForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project ModelForm for the Update/Create views</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.media_classification.forms.ProjectRoleFormset">
+<tt class="descclassname">trapper.apps.media_classification.forms.</tt><tt class="descname">ProjectRoleFormset</tt><a class="headerlink" href="#trapper.apps.media_classification.forms.ProjectRoleFormset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formset for the ProjectRole model</p>
+<p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ProjectRoleFormFormSet</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.media_classification.forms.SequenceForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.media_classification.forms.</tt><tt class="descname">SequenceForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/forms.html#SequenceForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.forms.SequenceForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sequence ModelForm for the Update and Create views.</p>
+</dd></dl>
+
 </div>
-<div class="section" id="decorators">
-<h3>decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="module-trapper.apps.media_classification.decorators">
+<span id="decorators"></span><h3>decorators<a class="headerlink" href="#module-trapper.apps.media_classification.decorators" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="trapper.apps.media_classification.decorators.project_role_required">
+<tt class="descclassname">trapper.apps.media_classification.decorators.</tt><tt class="descname">project_role_required</tt><big>(</big><em>roles</em>, <em>access_denied_page</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/media_classification/decorators.html#project_role_required"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.media_classification.decorators.project_role_required" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether request.user contains the necessary project roles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>roles</strong> (<em>list</em>) &#8211; iterable of role names required (any)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="messaging">
@@ -123,25 +1366,146 @@ rows, each containing an indentical set of features. Each <tt class="docutils li
 <p>Module <a class="reference internal" href="#trapper-apps-messaging"><em>messaging</em></a> serves as a simple notification system as well as an internal <em>e-mail</em> functionality between the users.</p>
 <div class="section" id="id7">
 <h3>models<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.messaging.models"></span><dl class="class">
+<dt id="trapper.apps.messaging.models.CollectionRequest">
+<em class="property">class </em><tt class="descclassname">trapper.apps.messaging.models.</tt><tt class="descname">CollectionRequest</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/messaging/models.html#CollectionRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.messaging.models.CollectionRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notification about an incoming collection request for the media classification project</p>
+<dl class="method">
+<dt id="trapper.apps.messaging.models.CollectionRequest.resolve_no">
+<tt class="descname">resolve_no</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/messaging/models.html#CollectionRequest.resolve_no"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.messaging.models.CollectionRequest.resolve_no" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolves the request negatively.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.messaging.models.CollectionRequest.resolve_yes">
+<tt class="descname">resolve_yes</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/trapper/apps/messaging/models.html#CollectionRequest.resolve_yes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.messaging.models.CollectionRequest.resolve_yes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolves the request positively and creates a ProjectCollection object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.messaging.models.Message">
+<em class="property">class </em><tt class="descclassname">trapper.apps.messaging.models.</tt><tt class="descname">Message</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/messaging/models.html#Message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.messaging.models.Message" title="Permalink to this definition">¶</a></dt>
+<dd><p>E-mail like messaging features among the users.</p>
+<dl class="attribute">
+<dt id="trapper.apps.messaging.models.Message.subject">
+<tt class="descname">subject</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.messaging.models.Message.subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Message subject</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="trapper.apps.messaging.models.Message.text">
+<tt class="descname">text</tt><em class="property"> = None</em><a class="headerlink" href="#trapper.apps.messaging.models.Message.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Message text (body)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.messaging.models.SystemNotification">
+<em class="property">class </em><tt class="descclassname">trapper.apps.messaging.models.</tt><tt class="descname">SystemNotification</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/messaging/models.html#SystemNotification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.messaging.models.SystemNotification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class for various types of system notifications directed towards a user.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="id8">
 <h3>views<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-</div>
+<span class="target" id="module-trapper.apps.messaging.views"></span></div>
 <div class="section" id="id9">
 <h3>forms<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-</div>
+<span class="target" id="module-trapper.apps.messaging.forms"></span></div>
 </div>
 <div class="section" id="geomap">
 <span id="trapper-apps-geomap"></span><h2>geomap<a class="headerlink" href="#geomap" title="Permalink to this headline">¶</a></h2>
 <p>Module <a class="reference internal" href="#trapper-apps-geomap"><em>geomap</em></a> uses geospatial information about resources stored by <a class="reference internal" href="#trapper-apps-storage"><em>storage</em></a> to present it on the map.</p>
 <div class="section" id="id10">
 <h3>models<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.geomap.models"></span><dl class="class">
+<dt id="trapper.apps.geomap.models.Location">
+<em class="property">class </em><tt class="descclassname">trapper.apps.geomap.models.</tt><tt class="descname">Location</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/models.html#Location"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.models.Location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single location (Point) on map.
+This model is often referred by other models for establishing a spatial context.</p>
+<dl class="method">
+<dt id="trapper.apps.geomap.models.Location.can_view">
+<tt class="descname">can_view</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/models.html#Location.can_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.models.Location.can_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether user can view the location.
+:param user: user for which the test is made
+:type user: <tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.User</span></tt>
+:return: True if user can see the location, False otherwise
+:rtype: bool</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id11">
 <h3>views<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.geomap.views"></span><dl class="class">
+<dt id="trapper.apps.geomap.views.LocationDetailView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.geomap.views.</tt><tt class="descname">LocationDetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/views.html#LocationDetailView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.views.LocationDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays given location on the map.</p>
+<dl class="attribute">
+<dt id="trapper.apps.geomap.views.LocationDetailView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.geomap.views.LocationDetailView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Location</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.geomap.views.LocationListView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.geomap.views.</tt><tt class="descname">LocationListView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/views.html#LocationListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.views.LocationListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays list of locations.</p>
+<dl class="attribute">
+<dt id="trapper.apps.geomap.views.LocationListView.model">
+<tt class="descname">model</tt><a class="headerlink" href="#trapper.apps.geomap.views.LocationListView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Location</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="trapper.apps.geomap.views.LocationUploadView">
+<em class="property">class </em><tt class="descclassname">trapper.apps.geomap.views.</tt><tt class="descname">LocationUploadView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/views.html#LocationUploadView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.views.LocationUploadView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads location data from the gpx file.</p>
+<dl class="attribute">
+<dt id="trapper.apps.geomap.views.LocationUploadView.form_class">
+<tt class="descname">form_class</tt><a class="headerlink" href="#trapper.apps.geomap.views.LocationUploadView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">LocationUploadForm</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trapper.apps.geomap.views.LocationUploadView.form_valid">
+<tt class="descname">form_valid</tt><big>(</big><em>form</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/views.html#LocationUploadView.form_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.views.LocationUploadView.form_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attaches a message once the form was validated.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="id12">
 <h3>forms<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-trapper.apps.geomap.forms"></span><dl class="class">
+<dt id="trapper.apps.geomap.forms.LocationUploadForm">
+<em class="property">class </em><tt class="descclassname">trapper.apps.geomap.forms.</tt><tt class="descname">LocationUploadForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/forms.html#LocationUploadForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.forms.LocationUploadForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload form for the locations file.</p>
+<dl class="method">
+<dt id="trapper.apps.geomap.forms.LocationUploadForm.add_locations">
+<tt class="descname">add_locations</tt><big>(</big><em>user</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/geomap/forms.html#LocationUploadForm.add_locations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.geomap.forms.LocationUploadForm.add_locations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the .gpx file and looks for the locations which aren&#8217;t available in the system yet.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<tt class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.User</span></tt>) &#8211; user adding the locations (made the Location&#8217;s owner)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="common">
@@ -150,7 +1514,14 @@ rows, each containing an indentical set of features. Each <tt class="docutils li
 any of the applications above.</p>
 <div class="section" id="id13">
 <h3>decorators<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<span class="target" id="module-trapper.apps.common.decorators"></span><dl class="function">
+<span class="target" id="module-trapper.apps.common.decorators"></span><dl class="class">
+<dt id="trapper.apps.common.decorators.ObjectAccessRequiredMixin">
+<em class="property">class </em><tt class="descclassname">trapper.apps.common.decorators.</tt><tt class="descname">ObjectAccessRequiredMixin</tt><a class="reference internal" href="_modules/trapper/apps/common/decorators.html#ObjectAccessRequiredMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.common.decorators.ObjectAccessRequiredMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether request.user passes the test for the object he is trying to access (view/edit/delete).</p>
+<p>access_func must take exactly two parameters: the object and a user</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="trapper.apps.common.decorators.object_access_required">
 <tt class="descclassname">trapper.apps.common.decorators.</tt><tt class="descname">object_access_required</tt><big>(</big><em>modelname</em>, <em>access_func</em><big>)</big><a class="reference internal" href="_modules/trapper/apps/common/decorators.html#object_access_required"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#trapper.apps.common.decorators.object_access_required" title="Permalink to this definition">¶</a></dt>
 <dd><p>At the moment this decorator checks whether request.user passes certain access_func.</p>
@@ -164,102 +1535,33 @@ Object is identified by the &#8216;pk&#8217; item from the request.GET</p>
 </div>
 
 
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Technical documentation: Core modules</a><ul>
-<li><a class="reference internal" href="#accounts">accounts</a><ul>
-<li><a class="reference internal" href="#models">models</a></li>
-<li><a class="reference internal" href="#views">views</a></li>
-<li><a class="reference internal" href="#module-trapper.apps.accounts.forms">forms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#storage">storage</a><ul>
-<li><a class="reference internal" href="#id1">models</a></li>
-<li><a class="reference internal" href="#id2">views</a></li>
-<li><a class="reference internal" href="#id3">forms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#media-classification">media_classification</a><ul>
-<li><a class="reference internal" href="#id4">models</a></li>
-<li><a class="reference internal" href="#id5">views</a></li>
-<li><a class="reference internal" href="#id6">forms</a></li>
-<li><a class="reference internal" href="#decorators">decorators</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#messaging">messaging</a><ul>
-<li><a class="reference internal" href="#id7">models</a></li>
-<li><a class="reference internal" href="#id8">views</a></li>
-<li><a class="reference internal" href="#id9">forms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#geomap">geomap</a><ul>
-<li><a class="reference internal" href="#id10">models</a></li>
-<li><a class="reference internal" href="#id11">views</a></li>
-<li><a class="reference internal" href="#id12">forms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#common">common</a><ul>
-<li><a class="reference internal" href="#id13">decorators</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="technical_doc_part_1.html" class="btn btn-neutral" title="Technical documentation: Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="technical_doc_part_1.html"
-                        title="previous chapter">Technical documentation: Overview</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="troubleshooting.html"
-                        title="next chapter">Troubleshooting</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/technical_doc_part_2.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Trapper development team.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="troubleshooting.html" title="Troubleshooting"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="technical_doc_part_1.html" title="Technical documentation: Overview"
-             >previous</a> |</li>
-        <li><a href="index.html">Trapper 1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2013, Trapper development team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+</body>
 </html>

@@ -1,77 +1,174 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>trapper.apps.common.decorators &mdash; Trapper 1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trapper.apps.common.decorators &mdash; Trapper 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
+        URL_ROOT:'../../../../',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="top" title="Trapper 1 documentation" href="../../../../index.html" />
-    <link rel="up" title="Module code" href="../../../index.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../../../index.html">Trapper 1 documentation</a> &raquo;</li>
-          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
-      </ul>
-    </div>  
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Trapper 1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../../index.html" class="icon icon-home"> Trapper</a>
+        <form class="wy-form" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-the-project">Preparing the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#running-trapper">Running Trapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#system-roles">System roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#anonymous-user">Anonymous user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#crowd-sourcing-user">Crowd-Sourcing user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#expert-user">Expert user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#trapper-staff">Trapper staff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_1.html">Technical documentation: Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#django-applications">Django applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#coding-style">Coding style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_2.html">Technical documentation: Core modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#storage">storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#media-classification">media_classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#messaging">messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#geomap">geomap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#common">common</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#error-could-not-open-extension-control-file-usr-share-postgresql-9-1-extension-postgis-control">ERROR: could not open extension control file &#8220;/usr/share/postgresql/9.1/extension/postgis.control&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contribute to Trapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contribute.html#irc-webchat">IRC Webchat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../authors.html#trapper-development-team">Trapper development team</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Trapper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">trapper.apps.common.decorators</a></li>
+  
+</ul>
+<hr/>
+
+          
   <h1>Source code for trapper.apps.common.decorators</h1><div class="highlight"><pre>
 <span class="c">############################################################################</span>
-<span class="c">#   Copyright (c) 2013  IBS PAN Bialowieza                                 #</span>
-<span class="c">#   Copyright (c) 2013  Bialystok University of Technology                 #</span>
-<span class="c">#                                                                          #</span>
-<span class="c">#   This file is a part of Trapper.                                        #</span>
-<span class="c">#                                                                          #</span>
-<span class="c">#   Trapper is free software; you can redistribute it and/or modify        #</span>
+<span class="c">#   Copyright (c) 2013  IBS PAN Bialowieza								 #</span>
+<span class="c">#   Copyright (c) 2013  Bialystok University of Technology				 #</span>
+<span class="c">#																		  #</span>
+<span class="c">#   This file is a part of Trapper.										#</span>
+<span class="c">#																		  #</span>
+<span class="c">#   Trapper is free software; you can redistribute it and/or modify		#</span>
 <span class="c">#   it under the terms of the GNU General Public License as published by   #</span>
-<span class="c">#   the Free Software Foundation; either version 2 of the License, or      #</span>
-<span class="c">#   (at your option) any later version.                                    #</span>
-<span class="c">#                                                                          #</span>
-<span class="c">#   This program is distributed in the hope that it will be useful,        #</span>
-<span class="c">#   but WITHOUT ANY WARRANTY; without even the implied warranty of         #</span>
-<span class="c">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          #</span>
-<span class="c">#   GNU General Public License for more details.                           #</span>
-<span class="c">#                                                                          #</span>
-<span class="c">#   You should have received a copy of the GNU General Public License      #</span>
-<span class="c">#   along with this program; if not, write to the                          #</span>
-<span class="c">#   Free Software Foundation, Inc.,                                        #</span>
-<span class="c">#   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.              #</span>
+<span class="c">#   the Free Software Foundation; either version 2 of the License, or	  #</span>
+<span class="c">#   (at your option) any later version.									#</span>
+<span class="c">#																		  #</span>
+<span class="c">#   This program is distributed in the hope that it will be useful,		#</span>
+<span class="c">#   but WITHOUT ANY WARRANTY; without even the implied warranty of		 #</span>
+<span class="c">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the		  #</span>
+<span class="c">#   GNU General Public License for more details.						   #</span>
+<span class="c">#																		  #</span>
+<span class="c">#   You should have received a copy of the GNU General Public License	  #</span>
+<span class="c">#   along with this program; if not, write to the						  #</span>
+<span class="c">#   Free Software Foundation, Inc.,										#</span>
+<span class="c">#   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.			  #</span>
 <span class="c">############################################################################</span>
 
-<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">PermissionDenied</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ImproperlyConfigured</span><span class="p">,</span> <span class="n">PermissionDenied</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.views</span> <span class="kn">import</span> <span class="n">redirect_to_login</span>
 
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">braces.views</span> <span class="kn">import</span> <span class="n">AccessMixin</span>
 
 <div class="viewcode-block" id="object_access_required"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.common.decorators.object_access_required">[docs]</a><span class="k">def</span> <span class="nf">object_access_required</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">access_func</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
@@ -89,47 +186,56 @@
 			<span class="k">else</span><span class="p">:</span>
 				<span class="k">raise</span> <span class="n">PermissionDenied</span>
 		<span class="k">return</span> <span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)(</span><span class="n">inner</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">decorator</span></div>
-</pre></div>
-
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+	<span class="k">return</span> <span class="n">decorator</span>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<div class="viewcode-block" id="ObjectAccessRequiredMixin"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.common.decorators.ObjectAccessRequiredMixin">[docs]</a><span class="k">class</span> <span class="nc">ObjectAccessRequiredMixin</span><span class="p">(</span><span class="n">AccessMixin</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Checks whether request.user passes the test for the object he is trying to access (view/edit/delete).</span>
+
+<span class="sd">	access_func must take exactly two parameters: the object and a user</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="n">access_func</span> <span class="o">=</span> <span class="bp">None</span>
+
+	<span class="k">def</span> <span class="nf">get_access_func</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_func</span>
+
+	<span class="k">def</span> <span class="nf">get_accessed_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">access_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_access_func</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">access_func</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span>
+				<span class="s">&quot;</span><span class="si">%(cls)s</span><span class="s"> is missing the access_func. &quot;</span>
+				<span class="s">&quot;Define </span><span class="si">%(cls)s</span><span class="s">.access_func or override &quot;</span>
+				<span class="s">&quot;</span><span class="si">%(cls)s</span><span class="s">.get_access_func().&quot;</span> <span class="o">%</span> <span class="p">{</span><span class="s">&quot;cls&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">})</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_access_func</span><span class="p">()(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_accessed_object</span><span class="p">(),</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">PermissionDenied</span>
+
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span>
+			<span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Trapper development team.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../../../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../../../index.html">Trapper 1 documentation</a> &raquo;</li>
-          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2013, Trapper development team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+</body>
 </html>

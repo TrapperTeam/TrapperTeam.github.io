@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trapper.apps.storage.views &mdash; Trapper 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../../',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Trapper 1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../../index.html" class="icon icon-home"> Trapper</a>
+        <form class="wy-form" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-postgresql-database">Preparing PostgreSQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#preparing-the-project">Preparing the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#running-trapper">Running Trapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#extra-generating-this-documentation">Extra: Generating this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#system-roles">System roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#anonymous-user">Anonymous user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#crowd-sourcing-user">Crowd-Sourcing user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#expert-user">Expert user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials.html#trapper-staff">Trapper staff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_1.html">Technical documentation: Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#django-applications">Django applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_1.html#coding-style">Coding style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_doc_part_2.html">Technical documentation: Core modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#storage">storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#media-classification">media_classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#messaging">messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#geomap">geomap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../technical_doc_part_2.html#common">common</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#cannot-determine-postgis-version">Cannot determine PostGIS version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#operationalerror-fatal-peer-authentication-failed">OperationalError: FATAL: Peer authentication failed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../troubleshooting.html#error-could-not-open-extension-control-file-usr-share-postgresql-9-1-extension-postgis-control">ERROR: could not open extension control file &#8220;/usr/share/postgresql/9.1/extension/postgis.control&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contribute to Trapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contribute.html#irc-webchat">IRC Webchat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../authors.html#trapper-development-team">Trapper development team</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Trapper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">trapper.apps.storage.views</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for trapper.apps.storage.views</h1><div class="highlight"><pre>
+<span class="c">############################################################################</span>
+<span class="c">#   Copyright (c) 2013  IBS PAN Bialowieza                                 #</span>
+<span class="c">#   Copyright (c) 2013  Bialystok University of Technology                 #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This file is a part of Trapper.                                        #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   Trapper is free software; you can redistribute it and/or modify        #</span>
+<span class="c">#   it under the terms of the GNU General Public License as published by   #</span>
+<span class="c">#   the Free Software Foundation; either version 2 of the License, or      #</span>
+<span class="c">#   (at your option) any later version.                                    #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   This program is distributed in the hope that it will be useful,        #</span>
+<span class="c">#   but WITHOUT ANY WARRANTY; without even the implied warranty of         #</span>
+<span class="c">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          #</span>
+<span class="c">#   GNU General Public License for more details.                           #</span>
+<span class="c">#                                                                          #</span>
+<span class="c">#   You should have received a copy of the GNU General Public License      #</span>
+<span class="c">#   along with this program; if not, write to the                          #</span>
+<span class="c">#   Free Software Foundation, Inc.,                                        #</span>
+<span class="c">#   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.              #</span>
+<span class="c">############################################################################</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">generic</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">messages</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse_lazy</span><span class="p">,</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+
+<span class="kn">from</span> <span class="nn">braces.views</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
+
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.models</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Collection</span><span class="p">,</span> <span class="n">CollectionUploadJob</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.tasks</span> <span class="kn">import</span> <span class="n">process_collection_upload</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.forms</span> <span class="kn">import</span> <span class="n">ResourceForm</span><span class="p">,</span> <span class="n">CollectionForm</span><span class="p">,</span> <span class="n">CollectionRequestForm</span><span class="p">,</span> <span class="n">CollectionUploadForm</span><span class="p">,</span> <span class="n">CollectionUploadFormPart2</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.research.models</span> <span class="kn">import</span> <span class="n">Project</span><span class="p">,</span> <span class="n">ProjectRole</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.messaging.models</span> <span class="kn">import</span> <span class="n">Message</span><span class="p">,</span> <span class="n">CollectionRequest</span>
+<span class="kn">from</span> <span class="nn">trapper.apps.common.decorators</span> <span class="kn">import</span> <span class="n">object_access_required</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span>
+
+<span class="kn">from</span> <span class="nn">trapper.apps.storage.filters</span> <span class="kn">import</span> <span class="n">ResourceFilter</span>
+
+
+<span class="c"># Resource views</span>
+
+<div class="viewcode-block" id="ResourceListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceListView">[docs]</a><span class="k">class</span> <span class="nc">ResourceListView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Displays the list of :class:`.Resource` objects.</span>
+
+<span class="sd">	This view employs the filtering features.</span>
+<span class="sd">	For that reason, the :py:meth:`django.views.generic.ListView.get_queryset` was overloaded.</span>
+<span class="sd">	The method filters the standard result according to the passed GET parameters.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Resource</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;resources&#39;</span>
+	<span class="n">paginate_by</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&quot;storage/resource_list.html&quot;</span>
+
+<div class="viewcode-block" id="ResourceListView.get_queryset"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceListView.get_queryset">[docs]</a>	<span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Get the queryset filtered by the GET parameters (see :class:`.ResourceFilter`).&quot;&quot;&quot;</span>
+
+		<span class="n">qs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">filtered_queryset</span> <span class="o">=</span> <span class="n">ResourceFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">queryset</span><span class="o">=</span><span class="n">qs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">filtered_queryset</span>
+</div>
+<div class="viewcode-block" id="ResourceListView.get_context_data"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceListView.get_context_data">[docs]</a>	<span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns the context data supplemented by the filtering form as well as previous filtering parameters for the initial values.&quot;&quot;&quot;</span>
+
+		<span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">context</span><span class="p">[</span><span class="s">&#39;filtering_form&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ResourceFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">)</span><span class="o">.</span><span class="n">form</span>
+		<span class="n">request_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+		<span class="k">if</span> <span class="s">&#39;page&#39;</span> <span class="ow">in</span> <span class="n">request_params</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">request_params</span><span class="p">[</span><span class="s">&#39;page&#39;</span><span class="p">]</span>
+		<span class="n">context</span><span class="p">[</span><span class="s">&#39;previous_filter_params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">request_params</span><span class="o">.</span><span class="n">urlencode</span><span class="p">()</span>
+		<span class="k">return</span> <span class="n">context</span>
+</div></div>
+<div class="viewcode-block" id="UserResourceListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.UserResourceListView">[docs]</a><span class="k">class</span> <span class="nc">UserResourceListView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ResourceListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Displays the list of resources of given :py:class:`django.contrib.auth.models.User`</span>
+<span class="sd">	It mirrors the functionality of :class:`.ResourceListView`,</span>
+<span class="sd">	except it filters the queryset initally according to the resource ownership.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="UserResourceListView.get_queryset"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.UserResourceListView.get_queryset">[docs]</a>	<span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return the queryset filtered by the resources which are owned by given user.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">user</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;user_pk&#39;</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">Resource</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="ResourceDeleteView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceDeleteView">[docs]</a><span class="k">class</span> <span class="nc">ResourceDeleteView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">DeleteView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Delete view of the resource object.</span>
+<span class="sd">	Given resource can be removed when user is the owner or the uploader of the resource.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span><span class="o">=</span><span class="n">Resource</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="n">can_delete</span>
+	<span class="n">success_url</span><span class="o">=</span><span class="s">&#39;resource/list/&#39;</span>
+	<span class="n">context_object_name</span><span class="o">=</span><span class="s">&#39;object&#39;</span>
+	<span class="n">template_name</span><span class="o">=</span><span class="s">&#39;storage/object_confirm_delete.html&#39;</span>
+
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceDeleteView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ResourceUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceUpdateView">[docs]</a><span class="k">class</span> <span class="nc">ResourceUpdateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Update view of the resource object.</span>
+<span class="sd">	Given resource can be updated when user passes :func:`Resource.can_update` check.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Resource</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="n">can_update</span>
+	<span class="n">form_class</span><span class="o">=</span> <span class="n">ResourceForm</span>
+
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceUpdateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ResourceCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.ResourceCreateView">[docs]</a><span class="k">class</span> <span class="nc">ResourceCreateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Update view of the resource object.</span>
+<span class="sd">	Given resource can be updated when user passes an access function.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Resource</span>
+	<span class="n">form_class</span><span class="o">=</span> <span class="n">ResourceForm</span>
+
+	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="n">form</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">uploader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ResourceCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="UserCollectionListView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.UserCollectionListView">[docs]</a><span class="k">class</span> <span class="nc">UserCollectionListView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Collection list, initially filtered by the collections owned by given user.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Collection</span>
+	<span class="n">context_object_name</span> <span class="o">=</span> <span class="s">&#39;collections&#39;</span>
+
+<div class="viewcode-block" id="UserCollectionListView.get_queryset"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.UserCollectionListView.get_queryset">[docs]</a>	<span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Filters the queryset according to the user&#39;s id. &quot;&quot;&quot;</span>
+
+		<span class="n">user</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;user_pk&#39;</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">Collection</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="CollectionCreateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionCreateView">[docs]</a><span class="k">class</span> <span class="nc">CollectionCreateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Collection&#39;s create view.</span>
+<span class="sd">	Handles the creation of the Collection object.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Collection</span>
+	<span class="n">form_class</span><span class="o">=</span> <span class="n">CollectionForm</span>
+</div>
+<div class="viewcode-block" id="CollectionUpdateView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionUpdateView">[docs]</a><span class="k">class</span> <span class="nc">CollectionUpdateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">UpdateView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Collection&#39;s update view.</span>
+<span class="sd">	Handles the update of the Collection object.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Collection</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Collection</span><span class="o">.</span><span class="n">can_update</span>
+	<span class="n">form_class</span><span class="o">=</span> <span class="n">CollectionForm</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Collection</span><span class="o">.</span><span class="n">can_update</span>
+
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionUpdateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="c"># Uploading collections through YAML and archive files</span></div>
+<div class="viewcode-block" id="CollectionUploadViewPart2"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionUploadViewPart2">[docs]</a><span class="k">class</span> <span class="nc">CollectionUploadViewPart2</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">FormView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Collection&#39;s upload view.</span>
+<span class="sd">	This is the second part of the collection upload process.</span>
+<span class="sd">	See :class:`.CollectionUploadView` for more details.</span>
+<span class="sd">	This view handles the processing of the uploaded archive file, as well as its validation and the final</span>
+<span class="sd">	uploading action.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&quot;storage/collection_upload.html&quot;</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">CollectionUploadFormPart2</span>
+	<span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s">&#39;msg&#39;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionUploadViewPart2</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">context</span>
+
+	<span class="k">def</span> <span class="nf">get_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">initial</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s">&#39;job_pk&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;pk&#39;</span><span class="p">],</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">initial</span>
+
+<div class="viewcode-block" id="CollectionUploadViewPart2.form_valid"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionUploadViewPart2.form_valid">[docs]</a>	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Processes the uploaded archive file and delegates a</span>
+<span class="sd">		:func:`.process_collection_upload` task.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">messages</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s">&quot;&lt;strong&gt;Resources uploaded!&lt;/strong&gt; System will process your request soon.&quot;</span><span class="p">)</span>
+		<span class="n">job</span> <span class="o">=</span> <span class="n">CollectionUploadJob</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;job_pk&#39;</span><span class="p">])</span>
+		<span class="n">job</span><span class="o">.</span><span class="n">archive</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;archive_file&#39;</span><span class="p">]</span>
+		<span class="n">job</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+		<span class="n">process_collection_upload</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionUploadViewPart2</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="CollectionUploadView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionUploadView">[docs]</a><span class="k">class</span> <span class="nc">CollectionUploadView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">FormView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This is the first controller of the two-step process of uploading a collection data (also called **batch_uploading**).</span>
+<span class="sd">	This view displays a form with a single file upload input for the definition file.</span>
+<span class="sd">	The file is validated and then the :class:`.CollectionUploadJob` object is created.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&quot;storage/collection_upload.html&quot;</span>
+	<span class="n">form_class</span><span class="o">=</span> <span class="n">CollectionUploadForm</span>
+	<span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s">&#39;storage:collection_upload&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CollectionUploadView.form_valid"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionUploadView.form_valid">[docs]</a>	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Validates the configuration file using :meth:`.CollectionUploadForm.validate_config_file`,</span>
+<span class="sd">		and creates the :class:`.CollectionUploadJob` object.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">err</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">validate_config_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="s">&quot;OK&quot;</span><span class="p">:</span>
+			<span class="n">messages</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s">&quot;&lt;strong&gt;Definition file error!&lt;/strong&gt; </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">err</span><span class="p">,))</span>
+			<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionUploadView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">messages</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s">&quot;&lt;strong&gt;Success!&lt;/strong&gt; Definition file is valid, please upload the archive file (.zip)&quot;</span><span class="p">)</span>
+			<span class="n">job</span> <span class="o">=</span> <span class="n">CollectionUploadJob</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">definition</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;definition_file&#39;</span><span class="p">],</span> <span class="n">owner</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">&#39;storage:collection_upload_2&#39;</span><span class="p">,</span><span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;pk&#39;</span><span class="p">:</span><span class="n">job</span><span class="o">.</span><span class="n">pk</span><span class="p">}))</span>
+
+<span class="c"># Deleting collections</span></div></div>
+<div class="viewcode-block" id="CollectionDeleteView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionDeleteView">[docs]</a><span class="k">class</span> <span class="nc">CollectionDeleteView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ObjectAccessRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">DeleteView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This class handles the deletion of the :class:`.Collection` object.</span>
+<span class="sd">	The collection object can be deleted by the managers and the owner of the collection.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Collection</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Collection</span><span class="o">.</span><span class="n">can_update</span>
+	<span class="n">success_url</span><span class="o">=</span><span class="s">&#39;collection/list/&#39;</span>
+	<span class="n">context_object_name</span><span class="o">=</span><span class="s">&#39;object&#39;</span>
+	<span class="n">template_name</span><span class="o">=</span><span class="s">&#39;storage/object_confirm_delete.html&#39;</span>
+        <span class="n">access_func</span> <span class="o">=</span> <span class="n">Collection</span><span class="o">.</span><span class="n">can_update</span>
+
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionDeleteView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="c"># Requesting collections for the research.Project model</span></div>
+<div class="viewcode-block" id="CollectionRequestView"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionRequestView">[docs]</a><span class="k">class</span> <span class="nc">CollectionRequestView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">generic</span><span class="o">.</span><span class="n">FormView</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;This is the view generating the collection request page for the :class:`.Project`.</span>
+<span class="sd">	It will only display the projects in which the user has the admin :class:`.ProjectRole`.</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">template_name</span> <span class="o">=</span> <span class="s">&quot;storage/collection_request.html&quot;</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">CollectionRequestForm</span>
+	<span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s">&#39;storage:collection_list&#39;</span><span class="p">)</span>
+
+	<span class="c"># Template of the request message</span>
+	<span class="n">TEXT_TEMPLATE</span> <span class="o">=</span> <span class="s">&quot;Dear </span><span class="si">%s</span><span class="s">,&lt;br/&gt;I would like to ask you for the permission to use the </span><span class="si">%s</span><span class="s"> collection.&lt;br/&gt;&lt;br/&gt;Best regards,&lt;br/&gt;</span><span class="si">%s</span><span class="s">&quot;</span>
+
+	<span class="c"># Only Project Admins and Experts can request for the resources</span>
+	<span class="n">REQUIRED_PROJECT_ROLES</span> <span class="o">=</span> <span class="p">[</span><span class="n">ProjectRole</span><span class="o">.</span><span class="n">ROLE_PROJECT_ADMIN</span><span class="p">,</span> <span class="n">ProjectRole</span><span class="o">.</span><span class="n">ROLE_EXPERT</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionRequestView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+		<span class="c"># self.collection was set previously in the &quot;get_initial&quot; method</span>
+		<span class="n">context</span><span class="p">[</span><span class="s">&#39;collection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collection</span>
+		<span class="k">return</span> <span class="n">context</span>
+
+<div class="viewcode-block" id="CollectionRequestView.get_initial"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionRequestView.get_initial">[docs]</a>	<span class="k">def</span> <span class="nf">get_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Initialize the form with the projects query, as well as the collection in question.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">collection</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Collection</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;pk&#39;</span><span class="p">])</span>
+		<span class="n">projects</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+		<span class="n">initial</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s">&#39;collection_pk&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+			<span class="s">&#39;project&#39;</span><span class="p">:</span> <span class="n">projects</span><span class="p">,</span>
+			<span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">TEXT_TEMPLATE</span> <span class="o">%</span> <span class="p">(</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span>
+			<span class="p">)</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">initial</span>
+</div>
+<div class="viewcode-block" id="CollectionRequestView.get_form"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionRequestView.get_form">[docs]</a>	<span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form_class</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Gets the form the request view.</span>
+
+<span class="sd">		FEATURE REQUEST:</span>
+<span class="sd">		Logic below should be in :meth:`self.get_initial` method.</span>
+<span class="sd">		For some reason, the initial data for &#39;project&#39; does not work as expected.</span>
+<span class="sd">		Specifically, ModelChoiceField does not initialize with a QuerySet through the constructor.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionRequestView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">form_class</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+		<span class="n">project_pks</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">role</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">pk</span> <span class="k">for</span> <span class="n">role</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">research_roles</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name__in</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">REQUIRED_PROJECT_ROLES</span><span class="p">))</span>
+		<span class="n">projects</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk__in</span><span class="o">=</span><span class="n">project_pks</span><span class="p">)</span>
+		<span class="n">form</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s">&#39;project&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">queryset</span> <span class="o">=</span> <span class="n">projects</span>
+		<span class="k">return</span> <span class="n">form</span>
+</div>
+<div class="viewcode-block" id="CollectionRequestView.form_valid"><a class="viewcode-back" href="../../../../technical_doc_part_2.html#trapper.apps.storage.views.CollectionRequestView.form_valid">[docs]</a>	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Create a :class:`.Message` and :class:`.CollectionRequest` objects</span>
+<span class="sd">		directed at the owner of the collection.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">print</span> <span class="s">&quot;Send email, add message&quot;</span>
+		<span class="n">collection</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Collection</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;collection_pk&#39;</span><span class="p">])</span>
+		<span class="n">project</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;project&#39;</span><span class="p">]</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="s">&quot;Request for resources&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="n">user_from</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span><span class="n">user_to</span><span class="o">=</span><span class="n">collection</span><span class="o">.</span><span class="n">owner</span><span class="p">,</span> <span class="n">date_sent</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+		<span class="n">CollectionRequest</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Request for resources&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">collection</span><span class="o">.</span><span class="n">owner</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="n">collection</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CollectionRequestView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span></div></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Trapper development team.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>
